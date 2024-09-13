@@ -1,0 +1,64 @@
+<div class="dashboard-container">
+  <div class="sidebar">
+    <ul>
+      <li>3Sses</li>
+      <li>Courses</li>
+      <li>Exams</li>
+      <li>Quizzes</li>
+      <li>Chat</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <span>Welcome Student, XXXXXXXXXX</span>
+      <img class="student-photo" src="path-to-student-photo" alt="Student Photo" />
+      <div class="notification">
+        <span class="notification-count">2</span>
+        <i class="bell-icon"></i>
+      </div>
+    </div>
+
+    <div class="subject-selection">
+      <label for="subject">Choose Subject:</label>
+      <select id="subject">
+        <option value="English">English</option>
+        <!-- Add other subjects here -->
+      </select>
+    </div>
+
+    <div class="name-container">
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+    </div>
+
+    <div class="name-container">
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+    </div>
+
+    <div class="name-container">
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+        <div class="name">Mr. Mohamed</div>
+    </div>
+
+    <div class="teachers-grid">
+      <div class="teacher" *ngFor="let teacher of teachers">
+        <img src="path-to-teacher-photo" alt="Teacher Photo" />
+        <span>{{ teacher.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>
