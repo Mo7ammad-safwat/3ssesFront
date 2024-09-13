@@ -1,0 +1,100 @@
+/* app.component.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo h1 {
+  font-size: 20px;
+}
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-section h2 {
+  margin-right: 20px;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+}
+
+.icon-bell {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.courses {
+  margin-bottom: 20px;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.course-label {
+  width: 100px;
+  background-color: #ccc;
+  padding: 5px;
+}
+
+.calendar {
+  margin-top: 20px;
+}
+
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
