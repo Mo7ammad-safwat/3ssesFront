@@ -3,7 +3,7 @@ import { Lesson } from "./lesson";
 import { User } from "./user";
 
 export interface Course {
-  id: string;
+  id: number;
   title: string;
   description: string;
   instructor: User;
