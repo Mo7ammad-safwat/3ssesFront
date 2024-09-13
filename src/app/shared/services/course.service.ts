@@ -1,21 +1,39 @@
 import { Injectable } from '@angular/core';
-import { CourseLoaderService } from '../loaders/course-loader.service';
+import { Apollo, gql } from 'apollo-angular';
+import { map, Observable } from 'rxjs';
+import { Course } from '../interface/course';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CourseService {
-  constructor(private courseLoader: CourseLoaderService) { }
+  constructor(private apollo: Apollo) {}
 
-  getInstructor(parentId: string) {
-    return this.courseLoader.loadInstructor(parentId);
-  }
-
-  getEnrolledStudents(parentId: string) {
-    return this.courseLoader.loadEnrolledStudents(parentId);
-  }
-
-  getExams(parentId: string) {
-    return this.courseLoader.loadExams(parentId);
+  getCourses(): Observable<Course[]> {
+    return this.apollo
+      .watchQuery<{ courses: Course[] }>({
+        query: gql`
+          query getCourses($page: Int, $limit: Int) {
+            courses(page: $page, limit: $limit) {
+              courses {
+                id
+                title
+                description
+                instructor {
+                  fullName
+                  email
+                }
+              }
+              totalPages
+              currentPage
+            }
+          }
+        `,
+        variables: {
+          page: 1,
+          limit: 10,
+        },
+      })
+      .valueChanges.pipe(map((result: any) => result?.data?.courses?.courses));
   }
 }
