@@ -11,6 +11,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     graphqlProvider,
-    provideAnimations(), // <-- Add this to include animation support
+    provideAnimations(), // <-- Add provideAnimations to the providers array
   ],
 };

@@ -36,6 +36,9 @@ export class SidebarComponent {
   openshopping() {
     this.router.navigate(['shopping']);
   }
+  opencourses() {
+    this.router.navigate(['courses']);
 
-  sidebarVisible: boolean = false;
+  const sidebarVisible = false;
+  }
 }

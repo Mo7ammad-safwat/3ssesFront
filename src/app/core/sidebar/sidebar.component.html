@@ -1,21 +1,14 @@
 <div class="card flex flex-wrap justify-content-center gap-2">
-    <p-sidebar [(visible)]="sidebarVisible1" position="left">
-       <a routerLink="home">home</a>
-       <a routerLink="shopping">shopping</a>
+  <p-sidebar [(visible)]="sidebarVisible1" position="left">
+    <a routerLink="/home" (click)="sidebarVisible1 = false">Home</a>,<br><br>
+    <a routerLink="/home/shopping" (click)="sidebarVisible1 = false">Shopping</a><br><br>
+    <a routerLink="/home/courses" (click)="sidebarVisible1 = false">courses</a>
+  </p-sidebar>
 
-    </p-sidebar>
-
-
-
-
-
-
-    <p-button
-        type="button"
-        class="mr-2"
-        (onClick)="sidebarVisible1 = true"
-        icon="pi pi-arrow-right" />
-
-
-
+  <p-button
+    type="button"
+    class="mr-2"
+    (onClick)="sidebarVisible1 = true"
+    icon="pi pi-arrow-right">
+  </p-button>
 </div>

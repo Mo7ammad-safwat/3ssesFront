@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ShoppingcartComponent } from './user-page/shoppingcart/shoppingcart.component';
 import { MyLearnComponent } from './user-page/my-learn/my-learn.component';
 import { HomePadgeComponent } from './user-page/home-padge/home-padge.component';
+import { CoursesComponent } from './user-page/courses/courses.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
       { path: '', component: HomePadgeComponent },
       { path: 'shopping', component: ShoppingcartComponent },
       { path: 'admin', component: MyLearnComponent },
+      { path: 'courses', component: CoursesComponent },
     ],
   },
   { path: 'admin', component: AdminComponent },
