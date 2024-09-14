@@ -24,21 +24,43 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarComponent {
   constructor(private router: Router) {}
-  sidebarVisible1: boolean = false;
-  @ViewChild('sidebarRef') sidebarRef!: Sidebar;
 
-  closeCallback(e: Event): void {
-    this.sidebarRef.close(e);
-  }
   openHome() {
     this.router.navigate(['home']);
   }
-  openshopping() {
-    this.router.navigate(['shopping']);
+  openCategory() {
+    this.router.navigate(['admin']);
   }
-  opencourses() {
-    this.router.navigate(['courses']);
+  openCourse() {
+    if (this.router.url.includes('admin')) {
+      this.router.navigate(['admin/courses']);
+    } else {
+      this.router.navigate(['teacher']);
+    }
+  }
+  openSlider() {
+    this.router.navigate(['admin/slider']);
+  }
+  openEnrollment() {
+    if (this.router.url.includes('admin')) {
+      this.router.navigate(['admin/enrollment']);
+    } else {
+      this.router.navigate(['teacher/enrollment']);
+    }
+  }
+  onTeacherRequest() {
+    this.router.navigate(['admin/teacher-request']);
+  }
 
-  const sidebarVisible = false;
+  onAboutUs() {
+    this.router.navigate(['admin/about-us']);
+  }
+
+  isAdmin(): boolean {
+    return this.router.url.includes('admin');
+  }
+
+  isTeacher(): boolean {
+    return this.router.url.includes('teacher');
   }
 }

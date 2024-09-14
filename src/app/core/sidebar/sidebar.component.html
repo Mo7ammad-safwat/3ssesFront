@@ -1,14 +1,40 @@
-<div class="card flex flex-wrap justify-content-center gap-2">
-  <p-sidebar [(visible)]="sidebarVisible1" position="left">
-    <a routerLink="/home" (click)="sidebarVisible1 = false">Home</a>,<br><br>
-    <a routerLink="/home/shopping" (click)="sidebarVisible1 = false">Shopping</a><br><br>
-    <a routerLink="/home/courses" (click)="sidebarVisible1 = false">courses</a>
-  </p-sidebar>
+<div class="sidebar">
+  <ul class="nav flex-column">
+    <li style="cursor: pointer;" class="nav-item">
+      <a  (click)="openHome()" class="nav-link">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a>
+    </li>
+    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="openCategory()" class="nav-link">
+        <i class="fas fa-user-graduate"></i> <span>Categories</span>
+      </a>
+    </li>
 
-  <p-button
-    type="button"
-    class="mr-2"
-    (onClick)="sidebarVisible1 = true"
-    icon="pi pi-arrow-right">
-  </p-button>
+    <li style="cursor: pointer;" class="nav-item">
+      <a (click)="openCourse()" class="nav-link">
+        <i class="fas fa-book"></i> <span>Courses</span>
+      </a>
+    </li>
+    <li style="cursor: pointer;" class="nav-item">
+      <a (click)="openEnrollment()" class="nav-link">
+        <i class="fa-solid fa-bars-staggered"></i> <span>Enrollments</span>
+      </a>
+    </li>
+    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="openSlider()" class="nav-link">
+        <i class="fas fa-chalkboard-teacher"></i> <span>Slider</span>
+      </a>
+    </li>
+    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="onTeacherRequest()" class="nav-link">
+        <i class="fa-solid fa-person-chalkboard"></i> <span>Teacher Request</span>
+      </a>
+    </li>
+    <!-- <li *ngIf="isAdmin()" class="nav-item">
+      <a (click)="onAboutUs()" class="nav-link">
+        <i class="fas fa-chalkboard-teacher"></i> <span>About Us</span>
+      </a>
+    </li> -->
+  </ul>
 </div>
