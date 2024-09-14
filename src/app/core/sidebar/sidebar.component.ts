@@ -28,39 +28,39 @@ export class SidebarComponent {
   openHome() {
     this.router.navigate(['home']);
   }
-  openCategory() {
-    this.router.navigate(['admin']);
-  }
-  openCourse() {
-    if (this.router.url.includes('admin')) {
-      this.router.navigate(['admin/courses']);
-    } else {
-      this.router.navigate(['teacher']);
-    }
-  }
-  openSlider() {
-    this.router.navigate(['admin/slider']);
-  }
-  openEnrollment() {
-    if (this.router.url.includes('admin')) {
-      this.router.navigate(['admin/enrollment']);
-    } else {
-      this.router.navigate(['teacher/enrollment']);
-    }
-  }
-  onTeacherRequest() {
-    this.router.navigate(['admin/teacher-request']);
-  }
+  // openCategory() {
+  //   this.router.navigate(['admin']);
+  // }
+  // openCourse() {
+  //   if (this.router.url.includes('admin')) {
+  //     this.router.navigate(['admin/courses']);
+  //   } else {
+  //     this.router.navigate(['teacher']);
+  //   }
+  // }
+  // openSlider() {
+  //   this.router.navigate(['admin/slider']);
+  // }
+  // openEnrollment() {
+  //   if (this.router.url.includes('admin')) {
+  //     this.router.navigate(['admin/enrollment']);
+  //   } else {
+  //     this.router.navigate(['teacher/enrollment']);
+  //   }
+  // }
+  // onTeacherRequest() {
+  //   this.router.navigate(['admin/teacher-request']);
+  // }
 
-  onAboutUs() {
-    this.router.navigate(['admin/about-us']);
-  }
+  // onAboutUs() {
+  //   this.router.navigate(['admin/about-us']);
+  // }
 
-  isAdmin(): boolean {
-    return this.router.url.includes('admin');
-  }
+  // isAdmin(): boolean {
+  //   return this.router.url.includes('admin');
+  // }
 
-  isTeacher(): boolean {
-    return this.router.url.includes('teacher');
-  }
+  // isTeacher(): boolean {
+  //   return this.router.url.includes('teacher');
+  // }
 }
