@@ -1,0 +1,18 @@
+<app-card-details [Course]="Course"></app-card-details>
+<div class="card flex justify-content-center">
+    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+            quas!
+        </p>
+        <ng-template pTemplate="footer">
+            <div class="flex gap-3 mt-1">
+                <p-button label="By" severity="secondary" class="w-full" [ngStyle]="{ 'margin-right': '10px' }" />
+                <p-button label="Add To Card" class="w-full" styleClass="w-full" />
+            </div>
+        </ng-template>
+    </p-card>
+</div>

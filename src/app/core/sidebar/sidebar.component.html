@@ -5,32 +5,32 @@
         <i class="fas fa-home"></i> <span>Home</span>
       </a>
     </li>
-    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+    <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
       <a (click)="openCategory()" class="nav-link">
         <i class="fas fa-user-graduate"></i> <span>Categories</span>
       </a>
-    </li>
+    </li> -->
 
     <li style="cursor: pointer;" class="nav-item">
-      <a (click)="openCourse()" class="nav-link">
+      <a routerLink="home/courses" class="nav-link">
         <i class="fas fa-book"></i> <span>Courses</span>
       </a>
     </li>
-    <li style="cursor: pointer;" class="nav-item">
+    <!-- <li style="cursor: pointer;" class="nav-item">
       <a (click)="openEnrollment()" class="nav-link">
         <i class="fa-solid fa-bars-staggered"></i> <span>Enrollments</span>
       </a>
-    </li>
-    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+    </li> -->
+    <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
       <a (click)="openSlider()" class="nav-link">
         <i class="fas fa-chalkboard-teacher"></i> <span>Slider</span>
       </a>
-    </li>
-    <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+    </li> -->
+    <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
       <a (click)="onTeacherRequest()" class="nav-link">
         <i class="fa-solid fa-person-chalkboard"></i> <span>Teacher Request</span>
       </a>
-    </li>
+    </li> -->
     <!-- <li *ngIf="isAdmin()" class="nav-item">
       <a (click)="onAboutUs()" class="nav-link">
         <i class="fas fa-chalkboard-teacher"></i> <span>About Us</span>
