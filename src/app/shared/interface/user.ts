@@ -1,8 +1,11 @@
 export interface User {
-  id: string;
-  fullName: string;
+  id: number;
+  name: string;
   email: string;
   role: string;
-  enrolledCourses?: Course[]; // Opt
-  createdExams?: Exam[];      // Opt
+  profilePicture: string;
+  dateJoined: Date;
+  enabled: boolean;
+  courses: Course[];
+  enrollments: Enrollment[];
 }

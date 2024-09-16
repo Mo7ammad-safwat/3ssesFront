@@ -54,58 +54,10 @@
       <div class="col-md-12">
         <div class="card shadow-sm">
           <div class="card-header bg-primary text-white">
-            <ul class="nav nav-pills">
-              <li class="nav-item" (click)="selectCategory('All')">
-                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'All'}">All</a>
-              </li>
-              <li class="nav-item" (click)="selectCategory('Physics')">
-                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Physics'}">Physics</a>
-              </li>
-              <li class="nav-item" (click)="selectCategory('Biology')">
-                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Biology'}">Biology</a>
-              </li>
-            </ul>
+            <h5>My Courses</h5>
           </div>
-          <div class="card-body">
-            <div *ngIf="selectedCategory === 'All'" class="card-container">
-              <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
-                <ng-template pTemplate="header">
-                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-                </ng-template>
-                <p>
-                  Lorem ipsum dolor sit amet...
-                </p>
-              </p-card>
-              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
-                <ng-template pTemplate="header">
-                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-                </ng-template>
-                <p>
-                  Another card content...
-                </p>
-              </p-card>
-            </div>
-            <p *ngIf="selectedCategory === 'Physics'">
-              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
-                <ng-template pTemplate="header">
-                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-                </ng-template>
-                <p>
-                  Another card content...
-                </p>
-              </p-card>
-            </p>
-            <p *ngIf="selectedCategory === 'Biology'">
-              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
-                <ng-template pTemplate="header">
-                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-                </ng-template>
-                <p>
-                  Another card content...
-                </p>
-              </p-card>
-            </p>
-          </div>
+          <app-my-learn></app-my-learn>
+
         </div>
       </div>
     </div>

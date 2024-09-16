@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
+import { MyLearnComponent } from "../my-learn/my-learn.component";
 
 @Component({
   selector: 'app-home-padge',
   standalone: true,
-  imports: [CardModule, FormsModule, CalendarModule, CommonModule],
+  imports: [CardModule, FormsModule, CalendarModule, CommonModule, MyLearnComponent],
   templateUrl: './home-padge.component.html',
   styleUrls: ['./home-padge.component.scss']
 })
