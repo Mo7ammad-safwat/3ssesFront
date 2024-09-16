@@ -1,6 +1,22 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: #f8f9fa;
   font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%; /* Make the container take the full width */
+  max-width: 100%; /* Override any max-width set by Bootstrap */
+  padding: 0; /* Remove default padding */
+}
+
+.row {
+  width: 100%; /* Ensure the row takes the full width */
+  margin: 0; /* Remove any default margins */
 }
 
 .card {
@@ -32,4 +48,23 @@ body {
 
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.card-header ul.nav-pills .nav-link {
+  color: black; /* Initial color */
+}
+
+.card-header ul.nav-pills .nav-link:hover {
+  color: white; /* Color on hover */
 }
