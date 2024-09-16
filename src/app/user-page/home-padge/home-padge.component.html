@@ -1,89 +1,112 @@
 <div class="container">
   <div class="row">
-      <!-- Upcoming Events Section -->
-      <div class="col-md">
-          <div class="card shadow-sm">
-              <div class="card-header bg-primary text-white">
-                  <h5>Calendar</h5>
-              </div>
-              <div class="card-body">
-                  <div class="calendar">
-                      <p-calendar
-                        class="max-w-full"
-                        [(ngModel)]="selectedDate"
-                        [inline]="true"
-                        [showWeek]="true">
-                      </p-calendar>
-                  </div>
-              </div>
+    <!-- Upcoming Events Section -->
+    <div class="col-md">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>Calendar</h5>
+        </div>
+        <div class="card-body">
+          <div class="calendar">
+            <p-calendar
+              class="max-w-full"
+              [(ngModel)]="selectedDate"
+              [inline]="true"
+              [showWeek]="true">
+            </p-calendar>
           </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Reports Section -->
-      <div class="col-md">
-          <div class="card shadow-sm">
-              <div class="card-header bg-primary text-white">
-                  <h5>Upcoming Courses & Exams</h5>
-              </div>
-              <div class="card-body">
-                  <h5>Courses:</h5>
-                  <p class="course-item">
-                      English Course By Mr XXXX <span class="date">Sep15</span>
-                  </p>
-                  <p class="course-item">
-                      Physics Course By Mr XXXX <span class="date">Sep15</span>
-                  </p>
-                  <p class="course-item">
-                      Math Course By Mr XXXX <span class="date">Sep15</span>
-                  </p>
+    <!-- Reports Section -->
+    <div class="col-md">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>Upcoming Courses & Exams</h5>
+        </div>
+        <div class="card-body">
+          <h5>Courses:</h5>
+          <p class="course-item">
+            English Course By Mr XXXX <span class="date">Sep15</span>
+          </p>
+          <p class="course-item">
+            Physics Course By Mr XXXX <span class="date">Sep15</span>
+          </p>
+          <p class="course-item">
+            Math Course By Mr XXXX <span class="date">Sep15</span>
+          </p>
 
-                  <h5>Exams:</h5>
-                  <p class="course-item">
-                      Exam on Course English <span class="date">Sep15</span>
-                  </p>
-                  <p class="course-item">
-                      Exam on Course Physics <span class="date">Sep15</span>
-                  </p>
-              </div>
-          </div>
+          <h5>Exams:</h5>
+          <p class="course-item">
+            Exam on Course English <span class="date">Sep15</span>
+          </p>
+          <p class="course-item">
+            Exam on Course Physics <span class="date">Sep15</span>
+          </p>
+        </div>
       </div>
+    </div>
   </div>
 
-  <div class="row mt-4">
+    <div class="row mt-4">
       <!-- Current Projects Section -->
       <div class="col-md-12">
-          <div class="card shadow-sm">
-              <div class="card-header bg-primary text-white">
-                  <ul class="nav nav-pills">
-                      <li class="nav-item" (click)="selectCategory('All')">
-                          <a class="nav-link" [ngClass]="{'active': selectedCategory === 'All'}">All</a>
-                      </li>
-                      <li class="nav-item" (click)="selectCategory('Physics')">
-                          <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Physics'}">Physics</a>
-                      </li>
-                      <li class="nav-item" (click)="selectCategory('Biology')">
-                          <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Biology'}">Biology</a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="card-body">
-                  <p *ngIf="selectedCategory === 'All'">
-                      <strong>All is Working</strong><br>
-
-                      <br>
-                  </p>
-                  <p *ngIf="selectedCategory === 'Physics'">
-                      <strong>Physics is Working</strong><br>
-
-                      <br>
-                  </p>
-                  <p *ngIf="selectedCategory === 'Biology'">
-                      <strong>Biology is Working</strong><br>
-
-                      <br>
-                  </p>
-              </div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <ul class="nav nav-pills">
+              <li class="nav-item" (click)="selectCategory('All')">
+                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'All'}">All</a>
+              </li>
+              <li class="nav-item" (click)="selectCategory('Physics')">
+                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Physics'}">Physics</a>
+              </li>
+              <li class="nav-item" (click)="selectCategory('Biology')">
+                <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Biology'}">Biology</a>
+              </li>
+            </ul>
           </div>
+          <div class="card-body">
+            <div *ngIf="selectedCategory === 'All'" class="card-container">
+              <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+                <ng-template pTemplate="header">
+                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                  Lorem ipsum dolor sit amet...
+                </p>
+              </p-card>
+              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+                <ng-template pTemplate="header">
+                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                  Another card content...
+                </p>
+              </p-card>
+            </div>
+            <p *ngIf="selectedCategory === 'Physics'">
+              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+                <ng-template pTemplate="header">
+                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                  Another card content...
+                </p>
+              </p-card>
+            </p>
+            <p *ngIf="selectedCategory === 'Biology'">
+              <p-card header="Another Card" subheader="Card Subheader" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+                <ng-template pTemplate="header">
+                  <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                  Another card content...
+                </p>
+              </p-card>
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
