@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { CommonModule } from '@angular/common';
@@ -19,13 +19,13 @@ export class HomePadgeComponent {
   maxDate: Date = new Date(new Date().getFullYear(), 11, 31);
   selectedCategory: string = 'All';
 
-  constructor(private router: Router) {} // Inject Router
+  constructor(private router: Router) {}
 
   selectCategory(category: string) {
     this.selectedCategory = category;
   }
 
   navigateToPage(url: string) {
-    this.router.navigate([url]); // Navigate to the specified URL
+    this.router.navigate([url]);
   }
 }

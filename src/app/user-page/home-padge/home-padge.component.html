@@ -49,6 +49,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
     <div class="row mt-4">
       <!-- Current Projects Section -->
       <div class="col-md-12">
@@ -58,7 +59,66 @@
           </div>
           <app-my-learn></app-my-learn>
 
+=======
+  <div class="row mt-4">
+    <!-- Current Projects Section -->
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <ul class="nav nav-pills">
+            <li class="nav-item" (click)="selectCategory('All')">
+              <a class="nav-link" [ngClass]="{'active': selectedCategory === 'All'}">All</a>
+            </li>
+            <li class="nav-item" (click)="selectCategory('Physics')">
+              <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Physics'}">Physics</a>
+            </li>
+            <li class="nav-item" (click)="selectCategory('Biology')">
+              <a class="nav-link" [ngClass]="{'active': selectedCategory === 'Biology'}">Biology</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p *ngIf="selectedCategory === 'All'" class="card-container">
+            <p-card header="Biology" subheader="Mr.Mazen" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+              <ng-template pTemplate="header">
+                <img alt="Card" src="https://thumbs.dreamstime.com/b/biology-hand-drawn-doodles-lettering-education-science-vector-white-background-135246167.jpg" />
+              </ng-template>
+              <p>
+                Biology for 1st grade
+              </p>
+            </p-card>
+            <p-card header="Physics" subheader="Mr.Osama" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+              <ng-template pTemplate="header">
+                <img alt="Card" src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDE1LWVsZW1lbnQtMDIta3FhZnd1b2EuanBn.jpg" />
+              </ng-template>
+              <p>
+                Another card content...
+              </p>
+            </p-card>
+          </p>
+          <p *ngIf="selectedCategory === 'Physics'">
+            <p-card header="Physics" subheader="Mr.Osama" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+              <ng-template pTemplate="header">
+                <img alt="Card" src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDE1LWVsZW1lbnQtMDIta3FhZnd1b2EuanBn.jpg" />
+              </ng-template>
+              <p>
+                Another card content...
+              </p>
+            </p-card>
+          </p>
+          <p *ngIf="selectedCategory === 'Biology'">
+            <p-card header="Biology" subheader="Mr.Mazen" [style]="{ width: '200px', height: '300px' }" (click)="navigateToPage('home/OwnedCourses')">
+              <ng-template pTemplate="header">
+                <img alt="Card" src="https://thumbs.dreamstime.com/b/biology-hand-drawn-doodles-lettering-education-science-vector-white-background-135246167.jpg" />
+              </ng-template>
+              <p>
+                Biology for 1st grade
+              </p>
+            </p-card>
+          </p>
+>>>>>>> d9e735c (Addition of the Src for the Cards and their navigation upon Click)
         </div>
       </div>
     </div>
   </div>
+</div>
