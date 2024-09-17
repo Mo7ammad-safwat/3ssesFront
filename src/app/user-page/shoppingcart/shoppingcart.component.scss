@@ -1,0 +1,67 @@
+/* Container for the DataView */
+.p-dataview {
+  margin: 20px;
+}
+
+/* Styling for each product item */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image */
+.product-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 200px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Product details */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+/* Product name */
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Product category */
+.product-category {
+  font-size: 0.9em;
+  color: #757575;
+  margin-bottom: 8px;
+}
+
+/* Product price */
+.product-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #388e3c;
+  margin-bottom: 16px;
+}
+
+/* Buttons container */
+.product-buttons {
+  display: flex;
+  justify-content: space-between; /* Distribute space between elements */
+  align-items: center; /* Align items vertically in the center */
+  margin-top: 16px;
+}
+
+/* Individual button styling */
+.product-buttons p-button {
+  padding: 12px 24px; /* Increase padding for better visibility */
+  font-size: 1em; /* Increase font size */
+}
