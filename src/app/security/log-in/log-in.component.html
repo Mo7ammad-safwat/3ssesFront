@@ -1,11 +1,10 @@
- <div class="form">
-        <form action="" method=""> <!-- BackEnd -->
-            <h2>login here</h2>
-            <input type="email" name="email" id="email" placeholder="Enter email Here"/>
-            <input type="password" name="Password" id="Password" placeholder="Enter Password Here"/>
-            <button type="submit" class="btnn">login</button>
-        </form>
-
-        <p class="link">Don't have an account<br><br><br>
-        <a href="signIn.html">Sign in</a> here</p>
-    </div>
+<div class="form">
+  <form (submit)="onLogin()"> <!-- Call onLogin on form submit -->
+    <h2>Login here</h2>
+    <input type="email" name="email" id="email" placeholder="Enter email Here" [(ngModel)]="email"/>
+    <input type="password" name="Password" id="Password" placeholder="Enter Password Here" [(ngModel)]="password"/>
+    <button type="submit" class="btnn">Login</button>
+  </form>
+  <p class="link">Don't have an account<br><br><br>
+    <a routerLink="/signup">Sign up</a> here</p> <!-- Use routerLink for navigation -->
+</div>
