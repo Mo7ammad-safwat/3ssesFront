@@ -2,30 +2,12 @@ interface Course {
   id: string;
   title: string;
   description: string;
-  Categoryid: number;
   Userid: number;
   sections: Section[];
 }
-interface AboutMe {
-  id: string;
-  title: string;
-  contactMe: ContactMe[];
-}
-interface ContactMe {
-  id: string;
-  descriptionContactMe: string;
-}
-interface Category {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
-
 interface Section {
   id: string;
   title: string;
-  pozshin: number;
   Courseid: number;
   lessons: Lesson[];
 }
@@ -76,9 +58,7 @@ interface Question {
   id: string;
   title: string;
   description: string;
-  Categoryid: number;
-  courseid: number;
-  Sectionid: number;
+  Examid: number;
   status: string;
   answers: Answer[];
 }

@@ -1,11 +1,8 @@
-import { Question } from './question';
 export interface Exam {
   id: string;
   title: string;
-  description: string;
-  Courseid: number;
-  Lessonid: number;
-  Sectionid: number;
-
-  questions: Question[];
+  course: Course;
+  questions?: Question[]; //Opt
+  createdBy: User;
+  duration: string;
 }
