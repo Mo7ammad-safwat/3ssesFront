@@ -1,5 +1,12 @@
+import { Answer } from './answer';
+
 export interface Question {
-  questionText: string;
-  options?: string[];         // Opt
-  correctAnswer: string;
+  id: string;
+  title: string;
+  description: string;
+  Categoryid: number;
+  courseid: number;
+  Sectionid: number;
+  status: string;
+  answers: Answer[];
 }

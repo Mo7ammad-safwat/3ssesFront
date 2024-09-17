@@ -5,9 +5,13 @@ import { ShoppingcartComponent } from './user-page/shoppingcart/shoppingcart.com
 import { MyLearnComponent } from './user-page/my-learn/my-learn.component';
 import { HomePadgeComponent } from '../app/user-page/home-padge/home-padge.component';
 import { CoursesComponent } from './user-page/courses/courses.component';
+<<<<<<< HEAD
 import { PurchasedCoursesComponent } from './user-page/home-padge/purchased-courses/purchased-courses.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { LogInComponent } from './security/log-in/log-in.component';
+=======
+import { CardDetailsComponent } from './user-page/courses/course-card/card-details/card-details.component';
+>>>>>>> origin/v1.0-mohammad
 
 export const routes: Routes = [
   { path: 'login', component: LogInComponent },
@@ -20,7 +24,9 @@ export const routes: Routes = [
       { path: 'shopping', component: ShoppingcartComponent },
       { path: 'admin', component: MyLearnComponent },
       { path: 'courses', component: CoursesComponent },
-      { path: 'OwnedCourses', component: PurchasedCoursesComponent },
+      { path: 'my-learn', component: MyLearnComponent },
+      { path: 'shoppingcart', component: ShoppingcartComponent },
+      { path: 'detalis', component: CardDetailsComponent },
     ],
   },
   { path: 'admin', component: AdminComponent },

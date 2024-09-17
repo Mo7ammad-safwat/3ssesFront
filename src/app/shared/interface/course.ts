@@ -1,13 +1,11 @@
-import { Exam } from "./exam";
-import { Lesson } from "./lesson";
-import { User } from "./user";
-
-export interface Course {
-  id: number;
+import { Section } from './section';
+import { AboutMe } from './about-me';
+export interface Courses {
+  id: string;
   title: string;
   description: string;
-  instructor: User;
-  lessons?: Lesson[];         // Opt
-  enrolledStudents?: User[];  // Opt
-  exams?: Exam[];             // Opt
+  Categoryid: number;
+  Userid: number;
+  sections: Section[];
+  aboutMe: AboutMe[];
 }
