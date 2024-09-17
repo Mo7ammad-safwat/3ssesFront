@@ -5,22 +5,23 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f4f5f7;
-  /* Light grey background */
+  background-color: #ffffff; /* Light grey background */
+  padding: 1rem; /* Add padding to prevent content from touching the edges */
 }
 
-.login-container {
+.form {
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 400px; /* Set a maximum width */
   text-align: center;
+  margin: 0 auto; /* Center the container */
 }
 
-h1 {
-  color: #000000;
-  /* Black color for the text */
+h2 {
+  color: #000000; /* Black color for the text */
   margin-bottom: 1.5rem;
 }
 
@@ -43,8 +44,7 @@ button {
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
-  background-color: #d9534f;
-  /* Red button */
+  background-color: #d9534f; /* Red button */
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -54,24 +54,11 @@ button:hover {
   background-color: #c9302c;
 }
 
-.signup-link {
+.link {
   margin-top: 1rem;
 }
 
-.signup-link a {
-  color: #d9534f;
-  /* Red for the link */
+.link a {
+  color: #d9534f; /* Red for the link */
   text-decoration: none;
-}
-
-.forgot-password {
-  color: #d9534f;
-  text-decoration: none;
-  display: block;
-  margin-top: 10px;
-}
-
-.remember-me {
-  text-align: left;
-  margin-bottom: 1rem;
 }
