@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { SidebarComponent } from "./core/sidebar/sidebar.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from './core/sidebar/sidebar.component'; // Import SidebarComponent
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SidebarComponent, RouterOutlet, FormsModule, CommonModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, SidebarComponent], // Import SidebarComponent
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = '3ssesFront';
@@ -23,5 +23,9 @@ export class AppComponent {
 
   onSidebarLeave() {
     this.isSidebarHovered = false;
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/home']);
   }
 }
