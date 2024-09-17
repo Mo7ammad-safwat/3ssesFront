@@ -5,10 +5,11 @@ import { ShoppingcartComponent } from './user-page/shoppingcart/shoppingcart.com
 import { MyLearnComponent } from './user-page/my-learn/my-learn.component';
 import { HomePadgeComponent } from '../app/user-page/home-padge/home-padge.component';
 import { CoursesComponent } from './user-page/courses/courses.component';
-import { PurchasedCoursesComponent } from './user-page/home-padge/purchased-courses/purchased-courses.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { LogInComponent } from './security/log-in/log-in.component';
-
+import { CardDetailsComponent } from './user-page/courses/course-card/card-details/card-details.component';
+import { DetailsmyLearnComponent } from './user-page/my-learn/detailsmy-learn/detailsmy-learn.component';
+import { PurchasedCoursesComponent } from './user-page/home-padge/purchased-courses/purchased-courses.component';
 export const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
@@ -20,6 +21,10 @@ export const routes: Routes = [
       { path: 'shopping', component: ShoppingcartComponent },
       { path: 'admin', component: MyLearnComponent },
       { path: 'courses', component: CoursesComponent },
+      { path: 'my-learn', component: MyLearnComponent },
+      { path: 'shoppingcart', component: ShoppingcartComponent },
+      { path: 'detalis', component: CardDetailsComponent },
+      { path: 'detalis', component: DetailsmyLearnComponent },
       { path: 'OwnedCourses', component: PurchasedCoursesComponent },
     ],
   },
