@@ -56,4 +56,5 @@ export class CourseCardComponent {
       Userid: '6',
     },
   ];
+selectedCategory: any;
 }
