@@ -1,36 +1,32 @@
-<div class="card">
-    <p-carousel
-        [value]="products!"
-        [numVisible]="3"
-        [numScroll]="1"
-        [responsiveOptions]="responsiveOptions">
-            <ng-template let-product pTemplate="item">
-                <div class="border-1 surface-border border-round m-2 p-3">
-                    <div class="mb-3">
-                        <div class="relative mx-auto">
-                            <img
-                                src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
-                                [alt]="product.name"
-                                class="w-full border-round" />
-                            <p-tag
-                                [value]="product.inventoryStatus"
-                                class="absolute"
-                                [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
-                        </div>
-                    </div>
-                    <div class="mb-3 font-medium">
-                        {{ product.name }}
-                    </div>
-                    <div class="flex justify-content-between align-items-center">
-                        <div class="mt-0 font-semibold text-xl">
-                            {{ '$' + product.price }}
-                        </div>
-                        <span>
-                            <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
-                            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
-                        </span>
-                    </div>
-                </div>
-            </ng-template>
-    </p-carousel>
+<div class="container">
+<div class="border-top">
+  <div class="row">
+    @for (item of products; track $index) {
+    <div class="col-lg-3 col-md-6 mb-4">
+      <a (click)="viewCard(item); $event.stopPropagation()">
+        <div class="card">
+          <div
+            class="card-header"
+            style="background-color: transparent; direction: ltr"
+          >
+            <div class="avatar">
+              <span>{{ item.instractorNaem?.charAt(0) }}</span>
+            </div>
+            <div class="prof-name">
+              <span>Prof. {{ item.instractorNaem }}</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <img [src]="item.images" class="card-image"/>
+            <div class="" style="padding: 10px">
+              <h2>{{ item.title }}</h2>
+              <h3>{{ item.instractorNaem }}</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    }
+  </div>
+</div>
 </div>

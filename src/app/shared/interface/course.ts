@@ -6,6 +6,9 @@ export interface Courses {
   description: string;
   Categoryid: number;
   Userid: number;
+  instractorNaem: string;
+  images: string;
+
   sections: Section[];
   aboutMe: AboutMe[];
 }

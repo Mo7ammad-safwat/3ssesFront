@@ -22,17 +22,11 @@ export class MyLearnComponent {
       description:
         'A comprehensive overview of mechanical engineering principles.',
       Categoryid: 1,
+      instractorNaem: 'John Doe',
+      images: './../../../assets/img/download.png',
+
       Userid: 101,
-      sections: [
-        { id: 's1', title: 'Basics', pozshin: 1, Courseid: 1, lessons: [] },
-        {
-          id: 's2',
-          title: 'Advanced Topics',
-          pozshin: 2,
-          Courseid: 1,
-          lessons: [],
-        },
-      ],
+      sections: [],
       aboutMe: [],
     },
     {
@@ -41,6 +35,10 @@ export class MyLearnComponent {
       description:
         'Understanding the core components and processes in feed mill production.',
       Categoryid: 2,
+      instractorNaem: 'John Doe',
+      images:
+        './../../../assets/img/WhatsApp Image 2024-09-16 at 11.19.12_889f6bc7.jpg',
+
       Userid: 102,
       sections: [],
       aboutMe: [],
@@ -50,6 +48,9 @@ export class MyLearnComponent {
       title: 'Thermodynamics',
       description: 'Study of energy, heat, and their transformations.',
       Categoryid: 3,
+      instractorNaem: 'John Doe',
+      images: './../../../assets/img/download.png',
+
       Userid: 103,
       sections: [],
       aboutMe: [],
@@ -59,6 +60,10 @@ export class MyLearnComponent {
       title: 'Thermodynamics',
       description: 'Study of energy, heat, and their transformations.',
       Categoryid: 3,
+      instractorNaem: 'John Doe',
+      images:
+        './../../../assets/img/WhatsApp Image 2024-09-16 at 11.19.12_889f6bc7.jpg',
+
       Userid: 103,
       sections: [],
       aboutMe: [],
@@ -67,7 +72,7 @@ export class MyLearnComponent {
 
   responsiveOptions: any[] | undefined;
 
-  // constructor(private productService: ProductService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // this.productService.getProductsSmall().then((products) => {
@@ -91,5 +96,8 @@ export class MyLearnComponent {
         numScroll: 1,
       },
     ];
+  }
+  viewCard(course: any) {
+    this.router.navigate(['home/detalis']);
   }
 }

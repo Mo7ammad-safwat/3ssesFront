@@ -19,6 +19,7 @@ export class CoursesComponent {
       description:
         'A comprehensive overview of mechanical engineering principles.',
       Categoryid: 1,
+
       Userid: 101,
       sections: [
         { id: 's1', title: 'Basics', pozshin: 1, Courseid: 1, lessons: [] },
@@ -73,7 +74,8 @@ export class CoursesComponent {
   language: string = 'en';
   constructor(private router: Router) {}
   viewCard(course: any) {
-this.router.navigate(['detalis']); }
+    this.router.navigate(['home/detalis']);
+  }
   enroll(course: any) {
     console.log(course);
   }
