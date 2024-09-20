@@ -21,40 +21,40 @@ interface Course {
 })
 export class ShoppingcartComponent {
   courses: Course[] = [
-    {
-      title: 'Introduction to Programming',
-      category: 'Computer Science',
-      price: 100,
-      instructor: 'John Doe',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
-    },
-    {
-      title: 'Advanced Mathematics',
-      category: 'Mathematics',
-      price: 150,
-      instructor: 'Jane Smith',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
-    },
-    {
-      title: 'Graphic Design Basics',
-      category: 'Design',
-      price: 200,
-      instructor: 'Emily Johnson',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
-    },
-    {
-      title: 'Business Management',
-      category: 'Business',
-      price: 250,
-      instructor: 'Michael Brown',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
-    },
-    {
-      title: 'Digital Marketing',
-      category: 'Marketing',
-      price: 300,
-      instructor: 'Sarah Davis',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
-    }
+  {
+    title: 'Advanced Calculus',
+    category: 'Mathematics',
+    price: 150,
+    instructor: 'Jane Smith',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
+  },
+  {
+    title: 'Linear Algebra',
+    category: 'Mathematics',
+    price: 150,
+    instructor: 'John Les',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
+  },
+  {
+    title: 'Probability Theory',
+    category: 'Mathematics',
+    price: 200,
+    instructor: 'Jane Smith',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
+  },
+  {
+    title: 'Number Theory',
+    category: 'Mathematics',
+    price: 250,
+    instructor: 'Kate Jones',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
+  },
+  {
+    title: 'Statistics',
+    category: 'Mathematics',
+    price: 300,
+    instructor: 'Anna Clark',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Copyright.svg/480px-Copyright.svg.png'
+  }
   ];
 }

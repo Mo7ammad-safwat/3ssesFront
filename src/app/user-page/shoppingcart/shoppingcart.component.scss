@@ -6,28 +6,30 @@
 /* Styling for each product item */
 .product-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Align items horizontally */
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure the item takes full width of its container */
+  height: 100%; /* Ensure the card takes full height */
 }
 
 /* Product image */
 .product-image {
-  width: 100%; /* Make the image responsive */
-  max-width: 200px; /* Set a maximum width */
-  height: auto; /* Maintain aspect ratio */
+  width: 50px;
+  height: 50px; /* Set a fixed height */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-/* Product details */
-.product-details {
+/* Flex container for content */
+.flex-1 {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+  justify-content: space-between; /* Push the footer to the bottom */
+  height: 100%;
 }
 
 /* Product name */
@@ -49,19 +51,20 @@
   font-size: 1.1em;
   font-weight: bold;
   color: #388e3c;
-  margin-bottom: 16px;
 }
 
-/* Buttons container */
-.product-buttons {
+/* Footer container for price and button */
+.product-footer {
   display: flex;
-  justify-content: space-between; /* Distribute space between elements */
-  align-items: center; /* Align items vertically in the center */
-  margin-top: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Push the footer to the bottom of the card */
+  width: 300%;
 }
 
 /* Individual button styling */
-.product-buttons p-button {
+.product-footer .product-button {
+  margin-left: auto; /* Push the button to the far right */
   padding: 12px 24px; /* Increase padding for better visibility */
   font-size: 1em; /* Increase font size */
 }
