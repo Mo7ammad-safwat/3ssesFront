@@ -1,12 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { AvatarModule } from 'primeng/avatar';
 import { StyleClassModule } from 'primeng/styleclass';
-import { Sidebar } from 'primeng/sidebar';
-import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
     RouterModule,
   ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
   constructor(private router: Router) {}
@@ -28,39 +28,9 @@ export class SidebarComponent {
   openHome() {
     this.router.navigate(['home']);
   }
-  // openCategory() {
-  //   this.router.navigate(['admin']);
-  // }
-  // openCourse() {
-  //   if (this.router.url.includes('admin')) {
-  //     this.router.navigate(['admin/courses']);
-  //   } else {
-  //     this.router.navigate(['teacher']);
-  //   }
-  // }
-  // openSlider() {
-  //   this.router.navigate(['admin/slider']);
-  // }
-  // openEnrollment() {
-  //   if (this.router.url.includes('admin')) {
-  //     this.router.navigate(['admin/enrollment']);
-  //   } else {
-  //     this.router.navigate(['teacher/enrollment']);
-  //   }
-  // }
-  // onTeacherRequest() {
-  //   this.router.navigate(['admin/teacher-request']);
-  // }
 
-  // onAboutUs() {
-  //   this.router.navigate(['admin/about-us']);
-  // }
-
-  // isAdmin(): boolean {
-  //   return this.router.url.includes('admin');
-  // }
-
-  // isTeacher(): boolean {
-  //   return this.router.url.includes('teacher');
-  // }
+  signOut() {
+    localStorage.clear(); // Clear user data from local storage
+    this.router.navigate(['login']);
+  }
 }

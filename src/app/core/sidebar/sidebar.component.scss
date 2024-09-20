@@ -13,11 +13,12 @@ body {
   left: 0;
   z-index: 100;
   transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar:hover {
   width: 200px;
-
   /* Expand on hover */
 }
 
@@ -34,7 +35,6 @@ body {
 .sidebar .nav-link:hover {
   background-color: var(--secondary);
   color: white;
-  // border-radius: 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -52,5 +52,3 @@ body {
 .sidebar:hover .nav-link span {
   display: inline;
 }
-
-/* end  slider-sideBar */
