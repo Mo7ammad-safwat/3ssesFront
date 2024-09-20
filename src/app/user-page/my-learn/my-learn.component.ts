@@ -98,6 +98,6 @@ export class MyLearnComponent {
     ];
   }
   viewCard(course: any) {
-    this.router.navigate(['home/detalis']);
+    this.router.navigate(['home/MyCourses']);
   }
 }

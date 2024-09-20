@@ -8,6 +8,7 @@ import { CoursesComponent } from './user-page/courses/courses.component';
 import { CardDetailsComponent } from './user-page/courses/course-card/card-details/card-details.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { LogInComponent } from './security/log-in/log-in.component';
+import { DetailsmyLearnComponent } from '../app/user-page/my-learn/detailsmy-learn/detailsmy-learn.component';
 
 export const routes: Routes = [
   { path: 'login', component: LogInComponent },
@@ -23,6 +24,7 @@ export const routes: Routes = [
       { path: 'my-learn', component: MyLearnComponent },
       { path: 'shoppingcart', component: ShoppingcartComponent },
       { path: 'detalis', component: CardDetailsComponent },
+      { path: 'MyCourses', component: DetailsmyLearnComponent },
     ],
   },
   { path: 'admin', component: AdminComponent },
