@@ -2,9 +2,13 @@ interface Course {
   id: string;
   title: string;
   description: string;
-  Categoryid: number;
-  Userid: number;
+  Categoryid: string;
+  Userid: string;
+  instractorNaem: string;
+  images: string;
+
   sections: Section[];
+  aboutMe: AboutMe[];
 }
 interface AboutMe {
   id: string;
@@ -44,8 +48,6 @@ interface User {
   role: string;
   profilePicture: string;
   dateJoined: Date;
-  enabled: boolean;
-  courses: Course[];
   enrollments: Enrollment[];
 }
 interface Enrollment {
@@ -68,7 +70,6 @@ interface Exam {
   Courseid: number;
   Lessonid: number;
   Sectionid: number;
-
 
   questions: Question[];
 }
