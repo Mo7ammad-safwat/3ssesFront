@@ -15,7 +15,7 @@ import { CoursesComponent } from '../../courses.component';
     CommonModule,
     RouterModule,
 
-    
+
 
     FontAwesomeModule,
 
@@ -27,9 +27,9 @@ import { CoursesComponent } from '../../courses.component';
 export class CardDetailsComponent {
   course?: any = {
     id: 'c1',
-    title: 'Introduction to Mechanical Engineering',
+    title: 'Evolutionary Biology',
     description:
-      'A comprehensive overview of mechanical engineering principles.',
+      'Examination of the processes that drive the diversity and adaptation of organisms over time.',
     Categoryid: 1,
     Userid: 101,
     sections: [

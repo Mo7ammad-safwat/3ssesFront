@@ -3,9 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: start;
+  justify-content: space-between; /* Adjusted to space cards evenly */
   transform: scaleY(0.9);
-
 }
 
 /* General card styling */
@@ -16,8 +15,6 @@
   border-radius: 30px;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-
-
 }
 
 /* Header styling */
@@ -141,17 +138,12 @@ h2 {
   padding: 5px 12px;
   border: none;
   cursor: pointer;
-
   width: 100%;
-
-
-
   font-family: Roboto;
   font-size: 14px;
   font-weight: 500;
   line-height: 28.13px;
   letter-spacing: 0.03em;
-
 }
 
 .enroll-btn {
@@ -180,7 +172,6 @@ button:hover {
     gap: 10px;
   }
 }
-
 
 /* Responsive design for screens less than 750px */
 @media (max-width: 750px) {

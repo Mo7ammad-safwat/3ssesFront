@@ -68,3 +68,18 @@
   padding: 12px 24px; /* Increase padding for better visibility */
   font-size: 1em; /* Increase font size */
 }
+
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+/* Center the row */
+.row {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%; /* Ensure the row takes full width of its container */
+}

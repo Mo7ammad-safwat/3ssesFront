@@ -1,4 +1,4 @@
-<div class="home-card">
+<br><br><br><div class="home-card">
 
         @for (item of courses; track $index) {
         <div class="card">
@@ -13,48 +13,20 @@
             <div class="card-body">
               <a (click)="viewCard(item)">
 
-                <img  [src]="item.imageDownload" alt="UI/UX & Web Design" class="card-image">
+                &nbsp;&nbsp;&nbsp;<img  [src]="item.imageDownload" alt="Biology" class="card-image">
               </a>
 
                 <div class="" style="padding: 10px;">
 
                     <h2> {{ language === "ar" ? item.titleAr : item.title }}</h2>
-                    <!-- <div class="rating-price">
-                        <div class="rating">
-                          <span class="stars"><ng-container
-                            *ngFor="let starClass of getStars(item.averageRating!)"
-                          >
-                            <i [class]="starClass"></i>
-                          </ng-container>
-                                </span>
-                            <span class="rating-value">
-                              {{
-                                item.averageRating
-                              }}
-                              </span>
-                        </div>
-                        <div class="price-info">
-                            <span class="old-price">{{
-                              language === "ar"
-                                ? item.formattedAmountArBeforeDiscount
-                                : item.formattedAmountEnBeforeDiscount
-                              }}
-                            </span>
-                            <span class="new-price" *ngIf="
-                item.formattedAmountEn !== item.formattedAmountEnBeforeDiscount
-              ">{{
-                language === "ar"
-                  ? item.formattedAmountAr
-                  : item.formattedAmountEn
-              }}</span>
-                        </div>
-                    </div> -->
+
                     <div class="buttons">
                         <button class="enroll-btn"  (click)="enroll(item); $event.stopPropagation()">{{"Enroll_Now"}}</button>
                         <button class="details-btn" (click)="viewCard(item); $event.stopPropagation()">{{"View_Details"}} </button>
                     </div>
                 </div>
             </div>
+            <br>
         </div>
       }
 

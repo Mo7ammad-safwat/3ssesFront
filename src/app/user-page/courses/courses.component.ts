@@ -15,9 +15,9 @@ export class CoursesComponent {
   courses: any[] = [
     {
       id: 'c1',
-      title: 'Introduction to Mechanical Engineering',
+      title: 'Cell Biology',
       description:
-        'A comprehensive overview of mechanical engineering principles.',
+        'Study of the structure and function of cells, including cell organelles and cellular processes.',
       Categoryid: 1,
 
       Userid: 101,
@@ -35,9 +35,9 @@ export class CoursesComponent {
     },
     {
       id: 'c2',
-      title: 'Feed Mill Technology',
+      title: 'Genetics',
       description:
-        'Understanding the core components and processes in feed mill production.',
+        'Exploration of heredity, gene function, and genetic variation in living organisms.',
       Categoryid: 2,
       Userid: 102,
       sections: [],
@@ -45,8 +45,8 @@ export class CoursesComponent {
     },
     {
       id: 'c3',
-      title: 'Thermodynamics',
-      description: 'Study of energy, heat, and their transformations.',
+      title: 'Evolutionary Biology',
+      description: 'Examination of the processes that drive the diversity and adaptation of organisms over time.',
       Categoryid: 3,
       Userid: 103,
       sections: [],
@@ -54,8 +54,8 @@ export class CoursesComponent {
     },
     {
       id: 'c3',
-      title: 'Thermodynamics',
-      description: 'Study of energy, heat, and their transformations.',
+      title: 'Ecology',
+      description: 'Study of interactions between organisms and their environment, including ecosystems and biodiversity.',
       Categoryid: 3,
       Userid: 103,
       sections: [],
@@ -63,8 +63,8 @@ export class CoursesComponent {
     },
     {
       id: 'c3',
-      title: 'Thermodynamics',
-      description: 'Study of energy, heat, and their transformations.',
+      title: 'Human Anatomy',
+      description: "Detailed study of the human body's structure, including organs, tissues, and systems.",
       Categoryid: 3,
       Userid: 103,
       sections: [],
@@ -72,6 +72,7 @@ export class CoursesComponent {
     },
   ];
   language: string = 'en';
+item: any;
   constructor(private router: Router) {}
   viewCard(course: any) {
     this.router.navigate(['home/detalis']);

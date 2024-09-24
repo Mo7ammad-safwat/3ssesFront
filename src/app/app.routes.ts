@@ -9,10 +9,14 @@ import { CardDetailsComponent } from './user-page/courses/course-card/card-detai
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { LogInComponent } from './security/log-in/log-in.component';
 import { DetailsmyLearnComponent } from '../app/user-page/my-learn/detailsmy-learn/detailsmy-learn.component';
-
+import { DetailsmyLearn2Component } from './user-page/my-learn/detailsmy-learn2/detailsmy-learn2.component';
+import { DetailsmyLearn3Component } from './user-page/my-learn/detailsmy-learn3/detailsmy-learn3.component';
+import { DetailsmyLearn4Component } from './user-page/my-learn/detailsmy-learn4/detailsmy-learn4.component';
+import { PaymentMethodComponent } from './user-page/shoppingcart/payment-method/payment-method.component';
 export const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
+  { path: 'PaymentMethods', component: PaymentMethodComponent },
   {
     path: 'home',
     component: UserPageComponent,
@@ -24,7 +28,10 @@ export const routes: Routes = [
       { path: 'my-learn', component: MyLearnComponent },
       { path: 'shoppingcart', component: ShoppingcartComponent },
       { path: 'detalis', component: CardDetailsComponent },
-      { path: 'MyCourses', component: DetailsmyLearnComponent },
+      { path: 'MyCourses/c1', component: DetailsmyLearnComponent },
+      { path: 'MyCourses/c2', component: DetailsmyLearn2Component},
+      { path: 'MyCourses/c3', component: DetailsmyLearn3Component },
+      { path: 'MyCourses/c4', component: DetailsmyLearn4Component },
     ],
   },
   { path: 'admin', component: AdminComponent },

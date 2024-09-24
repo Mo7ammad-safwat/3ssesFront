@@ -73,3 +73,10 @@ body {
   display: flex;
   gap: 20px; /* Adjust the gap between cards as needed */
 }
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container takes the full height */
+}

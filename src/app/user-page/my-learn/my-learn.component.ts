@@ -18,11 +18,11 @@ export class MyLearnComponent {
   products: Courses[] = [
     {
       id: 'c1',
-      title: 'Introduction to Mechanical Engineering',
+      title: 'Physics',
       description:
         'A comprehensive overview of mechanical engineering principles.',
       Categoryid: 1,
-      instractorNaem: 'John Doe',
+      instractorNaem: 'Gostaf Adel',
       images: './../../../assets/img/download.png',
 
       Userid: 101,
@@ -31,11 +31,11 @@ export class MyLearnComponent {
     },
     {
       id: 'c2',
-      title: 'Feed Mill Technology',
+      title: 'Chemistry',
       description:
         'Understanding the core components and processes in feed mill production.',
       Categoryid: 2,
-      instractorNaem: 'John Doe',
+      instractorNaem: 'Ashraf Kamel',
       images:
         './../../../assets/img/WhatsApp Image 2024-09-16 at 11.19.12_889f6bc7.jpg',
 
@@ -45,10 +45,10 @@ export class MyLearnComponent {
     },
     {
       id: 'c3',
-      title: 'Thermodynamics',
+      title: 'Arabic',
       description: 'Study of energy, heat, and their transformations.',
       Categoryid: 3,
-      instractorNaem: 'John Doe',
+      instractorNaem: 'Ahmed mohamed',
       images: './../../../assets/img/download.png',
 
       Userid: 103,
@@ -56,8 +56,8 @@ export class MyLearnComponent {
       aboutMe: [],
     },
     {
-      id: 'c3',
-      title: 'Thermodynamics',
+      id: 'c4',
+      title: 'English',
       description: 'Study of energy, heat, and their transformations.',
       Categoryid: 3,
       instractorNaem: 'John Doe',
@@ -98,6 +98,6 @@ export class MyLearnComponent {
     ];
   }
   viewCard(course: any) {
-    this.router.navigate(['home/MyCourses']);
+    this.router.navigate([`home/MyCourses/${course.id}`]);
   }
 }
