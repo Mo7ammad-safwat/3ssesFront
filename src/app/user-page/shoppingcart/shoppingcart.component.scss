@@ -83,3 +83,18 @@
   justify-content: center; /* Center horizontally */
   width: 100%; /* Ensure the row takes full width of its container */
 }
+
+.custom-buy-now-button {
+  background-color: #007bff; /* Change to your desired background color */
+  color: white; /* Change to your desired text color */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Adjust padding */
+  font-size: 10px; /* Adjust font size */
+  border-radius: 5px; /* Adjust border radius */
+}
+
+.custom-buy-now-button:hover {
+  background-color: #0056b3; /* Change to your desired hover background color */
+}
+
+

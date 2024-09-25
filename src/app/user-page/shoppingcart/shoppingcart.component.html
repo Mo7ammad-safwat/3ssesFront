@@ -19,7 +19,12 @@
                   </div>
                   <div class="flex flex-row justify-content-between align-items-center product-footer">
                     <span class="text-xl font-semibold text-900 product-price">{{ '$' + course.price }}</span>
-                    <p-button icon="pi pi-shopping-cart" class="product-button flex-auto md:flex-initial white-space-nowrap"  onclick="window.location.href='http://localhost:4200/PaymentMethods'" label="Buy Now"></p-button>
+                    <p-button
+                      icon="pi pi-shopping-cart"
+                      class="product-button flex-auto md:flex-initial white-space-nowrap custom-buy-now-button"
+                      onclick="window.location.href='http://localhost:4200/PaymentMethods'"
+                      label="Buy Now">
+                    </p-button>
                   </div>
                 </div>
               </div>
