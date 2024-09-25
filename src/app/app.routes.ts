@@ -13,6 +13,11 @@ import { DetailsmyLearn2Component } from './user-page/my-learn/detailsmy-learn2/
 import { DetailsmyLearn3Component } from './user-page/my-learn/detailsmy-learn3/detailsmy-learn3.component';
 import { DetailsmyLearn4Component } from './user-page/my-learn/detailsmy-learn4/detailsmy-learn4.component';
 import { PaymentMethodComponent } from './user-page/shoppingcart/payment-method/payment-method.component';
+import { Exam1Component } from './user-page/Exams/exam1/exam1.component';
+import { Exam2Component } from './user-page/Exams/exam2/exam2.component';
+import { Exam3Component } from './user-page/Exams/exam3/exam3.component';
+import { Exam4Component } from './user-page/Exams/exam4/exam4.component';
+
 export const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
@@ -32,6 +37,10 @@ export const routes: Routes = [
       { path: 'MyCourses/c2', component: DetailsmyLearn2Component},
       { path: 'MyCourses/c3', component: DetailsmyLearn3Component },
       { path: 'MyCourses/c4', component: DetailsmyLearn4Component },
+      { path: 'MyCourses/c1/exam', component: Exam1Component },
+      { path: 'MyCourses/c2/exam', component: Exam2Component },
+      { path: 'MyCourses/c3/exam', component: Exam3Component },
+      { path: 'MyCourses/c4/exam', component: Exam4Component },
     ],
   },
   { path: 'admin', component: AdminComponent },
