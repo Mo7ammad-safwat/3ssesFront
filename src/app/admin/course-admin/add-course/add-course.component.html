@@ -165,7 +165,7 @@
                 style="display: none"
               />
 
-              <label for="englishTitle">English Title</label>
+              <label for="englishTitle">Title</label>
               <input
                 type="text"
                 class="form-control"
@@ -193,15 +193,7 @@
             >
               Add Video Or PDF
             </button>
-            <button
-              type="button"
-              class="btn all-red-btn border-0 mr-3"
-              (click)="removeSection(i, section.value.id)"
-              style="padding: 6px 10px; font-size: 16px"
-            >
-              Remove Section
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
+           
 
             <button
               type="button"
@@ -325,26 +317,8 @@
                       </select>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-danger all-red-btn mr-3"
-                    (click)="removeLesson(i, j, lesson.value.id)"
-                    style="padding: 6px 10px; font-size: 16px"
-                  >
-                    Remove Lesson <i class="fa-regular fa-trash-can"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary border-0 mr-3"
-                    (click)="removeLesson(i, j, lesson.value.id)"
-                    [disabled]="i == 0"
-                    [ngClass]="{
-                      'hidden-button': i == 0,
-                      'visible-button': i != 0
-                    }"
-                  >
-                    <i class="fa-regular fa-circle-up"></i>
-                  </button>
+                  
+                  
                   <button
                     type="button"
                     class="btn btn-secondary mr-3"

@@ -13,8 +13,7 @@ import Swal from 'sweetalert2';
   styleUrl: './category-table.component.scss',
 })
 export class CategoryTableComponent implements OnInit, OnDestroy {
-  Category?: Category[];
-  private categoriesSubscription?: Subscription;
+  Category?: any[];
   loaddata: boolean = false;
   loadError: boolean = false;
 
@@ -25,17 +24,13 @@ export class CategoryTableComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadData();
-    this.categoriesSubscription = this.categorieService
-      .getCategoriesUpdateListener()
-      .subscribe(() => {
-        this.loadData();
-      });
+   
   }
 
   loadData() {
     this.loaddata = false;
     this.loadError = false;
-    this.categorieService.getallData().subscribe({
+    this.categorieService.getAllCategories().subscribe({
       next: (data) => {
         this.loaddata = true;
         this.Category = data;
@@ -49,7 +44,7 @@ export class CategoryTableComponent implements OnInit, OnDestroy {
     });
   }
 
-  onUpdate(category: Category) {
+  onUpdate(category: any) {
     const modalRef = this.modalService.open(AddcategoryComponent);
     modalRef.componentInstance.categoryToEdit = category;
   }
@@ -71,18 +66,18 @@ export class CategoryTableComponent implements OnInit, OnDestroy {
   }
 
   deleteData(id: any) {
-    this.categorieService.deleteData(id).subscribe({
-      next: (data) => {
-        Swal.fire('Deleted!', 'Your item has been deleted.', 'success');
-        this.loadData();
-      },
-      error: (error) => {
-        console.error('Error deleting data:', error);
-        Swal.fire('Error!', 'There was an error deleting the item.', 'error');
-      },
-    });
+    // this.categorieService.deleteData(id).subscribe({
+    //   next: (data) => {
+    //     Swal.fire('Deleted!', 'Your item has been deleted.', 'success');
+    //     this.loadData();
+    //   },
+    //   error: (error) => {
+    //     console.error('Error deleting data:', error);
+    //     Swal.fire('Error!', 'There was an error deleting the item.', 'error');
+    //   },
+    // });
   }
   ngOnDestroy(): void {
-    this.categoriesSubscription?.unsubscribe();
+    // this.categoriesSubscription?.unsubscribe();
   }
 }

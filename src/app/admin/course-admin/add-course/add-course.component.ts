@@ -16,7 +16,9 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { Constants } from '../../../shared/constants';
 import { CourseService } from '../../../shared/services/course.service';
 import { CategoryService } from '../../../shared/services/category.service';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-add-course',
   standalone: true,
@@ -26,14 +28,16 @@ import { CategoryService } from '../../../shared/services/category.service';
     FormsModule,
     RouterModule,
     SkeletonModule,
-
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './add-course.component.html',
   styleUrl: './add-course.component.scss',
 })
 export class AddCourseComponent implements OnInit {
   courseForm: FormGroup;
-  categoryList: Category[] = [];
+  categoryList: any[] = [];
   hasUnsavedChanges = false;
   isDataSaved = false;
   photoPreviewUrl: string | ArrayBuffer | null = null;
@@ -91,8 +95,8 @@ export class AddCourseComponent implements OnInit {
   }
 
   loadCategories(): void {
-    this.categoryService.getallData().subscribe(
-      (categories: Category[]) => (this.categoryList = categories),
+    this.categoryService.getAllCategories().subscribe(
+      (categories: any[]) => (this.categoryList = categories),
       (error) => {
         console.error('Error fetching categories:', error);
       }
@@ -103,7 +107,7 @@ export class AddCourseComponent implements OnInit {
     this.courseLoaded = false;
     this.courseError = false;
     this.courseService.getCourseById(courseId).subscribe(
-      (course: Course) => {
+      (course: any) => {
         this.courseLoaded = true;
         this.patchCourseData(course);
       },
@@ -113,11 +117,7 @@ export class AddCourseComponent implements OnInit {
     );
   }
 
-  patchCourseData(course: Course): void {
-
-  }
-
-
+  patchCourseData(course: any): void {}
 
   get sections(): FormArray {
     return this.courseForm.get('sections') as FormArray;
@@ -138,8 +138,6 @@ export class AddCourseComponent implements OnInit {
       this.hasUnsavedChanges = true;
     }
   }
-
-
 
   addLesson(sectionIndex: number) {
     const lessonGroup = this.fb.group({
@@ -162,17 +160,7 @@ export class AddCourseComponent implements OnInit {
     return this.sections.at(sectionIndex).get('lessons') as FormArray;
   }
 
-
-
-
-
-
-  onSubmit() {
-
-  }
-
-
-
+  onSubmit() {}
 
   updateSectionPositions() {
     this.sections.controls.forEach((sectionControl, index) => {
