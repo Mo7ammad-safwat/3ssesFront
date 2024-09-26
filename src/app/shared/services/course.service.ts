@@ -1,39 +1,58 @@
 import { Injectable } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
-import { map, Observable } from 'rxjs';
-import { Course } from '../interface/course';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  constructor(private apollo: Apollo) {}
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  getCourses(): Observable<Course[]> {
-    return this.apollo
-      .watchQuery<{ courses: Course[] }>({
-        query: gql`
-          query getCourses($page: Int, $limit: Int) {
-            courses(page: $page, limit: $limit) {
-              courses {
-                id
-                title
-                description
-                instructor {
-                  fullName
-                  email
-                }
-              }
-              totalPages
-              currentPage
-            }
-          }
-        `,
-        variables: {
-          page: 1,
-          limit: 10,
-        },
-      })
-      .valueChanges.pipe(map((result: any) => result?.data?.courses?.courses));
+  constructor(private http: HttpClient) {}
+
+  // الحصول على جميع الدورات
+  getAllCourses(): Observable<any> {
+    return this.http.get(`${environment.baseURL}/courses`, {
+      headers: this.headers,
+    });
+  }
+
+  // الحصول على دورة بناءً على ID
+  getCourseById(id: number): Observable<any> {
+    return this.http.get(`${environment.baseURL}/course/${id}`, {
+      headers: this.headers,
+    });
+  }
+
+  // الحصول على الدورات بناءً على CategoryId
+  getCoursesByCategoryId(categoryId: number): Observable<any> {
+    return this.http.get(
+      `${environment.baseURL}/courses/category/${categoryId}`,
+      {
+        headers: this.headers,
+      }
+    );
+  }
+
+  // إضافة دورة جديدة
+  addCourse(courseData: any): Observable<any> {
+    return this.http.post(`${environment.baseURL}/course`, courseData, {
+      headers: this.headers,
+    });
+  }
+
+  // تحديث دورة (إن وجدت)
+  updateCourse(id: number, courseData: any): Observable<any> {
+    return this.http.put(`${environment.baseURL}/course/${id}`, courseData, {
+      headers: this.headers,
+    });
+  }
+
+  // حذف دورة (إن وجدت)
+  deleteCourse(id: number): Observable<any> {
+    return this.http.delete(`${environment.baseURL}/course/${id}`, {
+      headers: this.headers,
+    });
   }
 }

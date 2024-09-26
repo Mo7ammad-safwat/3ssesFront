@@ -7,8 +7,37 @@ interface Course {
   instractorNaem: string;
   images: string;
 
-  sections: Section[];
-  aboutMe: AboutMe[];
+  sections: [
+    {
+      id: string;
+      title: string;
+      pozshin: number;
+      Courseid: number;
+      lessons: [
+        {
+          id: string;
+          title: string;
+          description: string;
+          Sectionid: number;
+          videoUrl: string;
+          pdfurl: string;
+        }
+      ];
+    }
+  ];
+  aboutMe: [
+    {
+      id: string;
+      title: string;
+      contactMe: [
+        {
+          id: string;
+          descriptionContactMe: string;
+        }
+      ];
+    }
+
+    ];
 }
 interface AboutMe {
   id: string;
@@ -48,7 +77,20 @@ interface User {
   role: string;
   profilePicture: string;
   dateJoined: Date;
-  enrollments: Enrollment[];
+  enrollments: [
+    {
+      id: string;
+      Courseid: number;
+      Sectionid: number;
+      Lessonid: number;
+      studentId: number;
+      enrollmentDate: Date;
+      studentName: string;
+      Userid: number;
+      progress: number;
+      status: string;
+    }
+  ];
 }
 interface Enrollment {
   id: string;
@@ -71,7 +113,25 @@ interface Exam {
   Lessonid: number;
   Sectionid: number;
 
-  questions: Question[];
+  questions: [
+    {
+      id: string;
+      title: string;
+      description: string;
+      Categoryid: number;
+      courseid: number;
+      Sectionid: number;
+      status: string;
+      answers: [
+        {
+          id: string;
+          title: string;
+          Questionid: number;
+          isCorrect: boolean;
+        }
+      ];
+    }
+  ];
 }
 interface Question {
   id: string;
