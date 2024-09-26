@@ -57,6 +57,6 @@ export class MyLearnComponent {
   }
 
   viewCard(course: any) {
-    this.router.navigate([`home/MyCourses/${course.id}`]);
+    this.router.navigate([`home/MyCourses`]);
   }
 }

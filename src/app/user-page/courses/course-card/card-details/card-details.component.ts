@@ -15,8 +15,6 @@ import { CoursesComponent } from '../../courses.component';
     CommonModule,
     RouterModule,
 
-
-
     FontAwesomeModule,
 
     CoursesComponent,
@@ -26,46 +24,130 @@ import { CoursesComponent } from '../../courses.component';
 })
 export class CardDetailsComponent {
   course?: any = {
-    id: 'c1',
-    title: 'Evolutionary Biology',
-    description:
-      'Examination of the processes that drive the diversity and adaptation of organisms over time.',
-    Categoryid: 1,
-    Userid: 101,
+    titleEn: 'Introduction to Data Science',
+    titleAr: 'مقدمة في علم البيانات',
+    instructorNameEn: 'John Doe',
+    category: {
+      name: 'Data Science',
+      nameAr: 'علم البيانات',
+    },
+    updatedDate: new Date(2023, 8, 1), // September 1, 2023
+    totalHours: 40,
+    formattedAmountEn: '$199.99',
+    formattedAmountEnBeforeDiscount: '$299.99',
+    descriptionEn:
+      "This course provides a comprehensive introduction to the field of data science. You'll learn key concepts and tools, including Python, statistics, and machine learning.",
+    descriptionAr:
+      'تقدم هذه الدورة مقدمة شاملة في مجال علم البيانات. ستتعلم المفاهيم والأدوات الرئيسية بما في ذلك بايثون والإحصاء وتعلم الآلة.',
     sections: [
-      { id: 's1', title: 'Basics', pozshin: 1, Courseid: 1, lessons: [] },
       {
-        id: 's2',
-        title: 'Advanced Topics',
-        pozshin: 2,
-        Courseid: 1,
+        titleEn: 'Introduction and Setup',
+        titleAr: 'مقدمة وإعداد',
         lessons: [
           {
-            id: 'l1',
-            title: 'Lesson 1',
-            pozshin: 1,
-            Sectionid: 1,
-            content: 'This is the first lesson.',
+            titleEn: 'Course Overview',
+            titleAr: 'نظرة عامة على الدورة',
+            contentType: 'video',
+            duration: '10:30',
           },
           {
-            id: 'l2',
-            title: 'Lesson 2',
-            pozshin: 2,
-            Sectionid: 1,
-            content: 'This is the second lesson.',
+            titleEn: 'Setting Up Your Environment',
+            titleAr: 'إعداد بيئة العمل',
+            contentType: 'video',
+            duration: '15:45',
+          },
+        ],
+      },
+      {
+        titleEn: 'Python Basics',
+        titleAr: 'أساسيات بايثون',
+        lessons: [
+          {
+            titleEn: 'Introduction to Python',
+            titleAr: 'مقدمة في بايثون',
+            contentType: 'video',
+            duration: '12:00',
+          },
+          {
+            titleEn: 'Data Types and Variables',
+            titleAr: 'أنواع البيانات والمتغيرات',
+            contentType: 'video',
+            duration: '18:20',
           },
         ],
       },
     ],
-    aboutMe: [
+    relatedCourses: [
       {
-        id: 'a1',
-        title: 'About Me',
-        content: 'This is the about me section.',
+        titleEn: 'Advanced Data Science Techniques',
+        titleAr: 'تقنيات علم البيانات المتقدمة',
+        instructorNameEn: 'Jane Smith',
+        category: {
+          name: 'Data Science',
+          nameAr: 'علم البيانات',
+        },
+        updatedDate: new Date(2023, 6, 15), // July 15, 2023
+        totalHours: 50,
+        formattedAmountEn: '$249.99',
+        formattedAmountEnBeforeDiscount: '$349.99',
+        descriptionEn:
+          'Dive deeper into data science with advanced techniques such as deep learning and natural language processing.',
+        descriptionAr:
+          'تعرف على تقنيات علم البيانات المتقدمة مثل التعلم العميق ومعالجة اللغات الطبيعية.',
+        sections: [
+          {
+            titleEn: 'Deep Learning Basics',
+            titleAr: 'أساسيات التعلم العميق',
+            lessons: [
+              {
+                titleEn: 'Introduction to Neural Networks',
+                titleAr: 'مقدمة في الشبكات العصبية',
+                contentType: 'video',
+                duration: '20:00',
+              },
+              {
+                titleEn: 'Building Your First Model',
+                titleAr: 'بناء نموذجك الأول',
+                contentType: 'video',
+                duration: '25:30',
+              },
+            ],
+          },
+        ],
+        relatedCourses: [], // Nested related courses can be added here as needed.
       },
     ],
   };
-  reviewData: any[] = [];
+  reviewData: any[] = [
+    {
+      userName: 'Alice Johnson',
+      comment:
+        'This course was very informative and the instructor explained the concepts clearly. Highly recommend for beginners!',
+      rating: 5,
+      reviewDate: new Date(2023, 8, 15), // September 15, 2023
+    },
+    {
+      userName: 'Mohamed Ali',
+      comment:
+        'The course covers a lot of material but could use more practical examples. Overall, a good introduction to data science.',
+      rating: 4,
+      reviewDate: new Date(2023, 8, 20), // September 20, 2023
+    },
+    {
+      userName: 'Sara Lee',
+      comment:
+        'Great course! The instructor made complex topics easy to understand.',
+      rating: 5,
+      reviewDate: new Date(2023, 9, 1), // October 1, 2023
+    },
+    {
+      userName: 'Youssef Mansour',
+      comment:
+        'The course is well-structured but some sections could use more depth. The quizzes were helpful.',
+      rating: 4,
+      reviewDate: new Date(2023, 7, 25), // August 25, 2023
+    },
+  ];
   panelOpenState = false;
   courseId?: any;
   // courses: Course[] = [];
