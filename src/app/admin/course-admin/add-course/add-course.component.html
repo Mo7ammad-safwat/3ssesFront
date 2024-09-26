@@ -13,7 +13,6 @@
     </h5>
   </div>
 
-  @if (!isEditMode || courseLoaded === true) { @defer (on immediate) {
   <form
     [formGroup]="courseForm"
     (ngSubmit)="onSubmit()"
@@ -24,7 +23,7 @@
     "
   >
     <div class="form-row">
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-12">
         <label for="titleEnglish" class="mt-4">Title</label>
         <input
           type="text"
@@ -42,20 +41,26 @@
         </div>
       </div>
 
-      <div class="form-group col-md-6">
-        <div class="addCourse-img">
-          <img
+      <div class="form-group col-md-12">
+                <label for="titleEnglish" class="mt-4">image Url</label>
+
+        <!-- <img
             src="{{ courseForm.get('image')?.value }}"
             alt="course image"
             class="img-fluid"
-          />
-          <input type="text" name="image" formControlName="image" id="" />
-        </div>
+          /> -->
+        <input
+          class="form-control"
+          type="text"
+          name="image"
+          formControlName="imageUrl"
+          id=""
+        />
       </div>
     </div>
 
     <div class="form-row mt-2">
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-12">
         <label for="descriptionEnglish">Description </label>
         <textarea
           class="form-control"
@@ -70,14 +75,13 @@
               courseForm.get('description')?.dirty)
           "
         >
-          <small class="text-danger">Description  is required.</small>
+          <small class="text-danger">Description is required.</small>
         </div>
       </div>
     </div>
 
     <div class="form-row">
-
-      <div class="form-group col-md-3">
+      <!-- <div class="form-group col-md-3">
         <label for="price">Price:</label>
         <input
           type="number"
@@ -97,7 +101,7 @@
             Price is required and must be non-negative.
           </small>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group col-md-3">
         <label for="category">Category:</label>
@@ -145,7 +149,7 @@
               class="mt-3 mb-3"
               style="font-family: var(--font-stack-heading); font-size: 20px"
             >
-              Section {{ i + 1 }}: {{ section.value.englishTitle }}
+              Section {{ i + 1 }}: {{ section.value.title }}
             </mat-panel-title>
           </mat-expansion-panel-header>
 
@@ -169,7 +173,7 @@
               <input
                 type="text"
                 class="form-control"
-                formControlName="englishTitle"
+                formControlName="title"
                 placeholder="Enter Section title in English"
                 required
               />
@@ -179,7 +183,7 @@
               <input
                 type="number"
                 class="form-control"
-                formControlName="position"
+                formControlName="pozshin"
                 min="1"
                 placeholder="Enter Position"
                 readonly
@@ -193,7 +197,6 @@
             >
               Add Video Or PDF
             </button>
-           
 
             <button
               type="button"
@@ -240,7 +243,7 @@
                       color: black;
                     "
                   >
-                    Lesson {{ j + 1 }}: {{ lesson.value.englishTitle }}
+                    Lesson {{ j + 1 }}: {{ lesson.value.title }}
                   </mat-panel-title>
                 </mat-expansion-panel-header>
 
@@ -266,12 +269,12 @@
                     />
                     <div class="form-group col-md-12">
                       <div class="form-group col-md-12">
-                        <label for="titleEnglish">Title (English):</label>
+                        <label for="titleEnglish">Title :</label>
                         <input
                           type="text"
                           class="form-control"
-                          formControlName="titleEnglish"
-                          placeholder="Enter Lesson title in English"
+                          formControlName="title"
+                          placeholder="Enter Lesson title "
                           required
                         />
                       </div>
@@ -283,21 +286,21 @@
 
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="durationTime">Duration Time</label>
+                      <label for="durationTime">description</label>
                       <input
                         type="number"
                         class="form-control"
-                        formControlName="duration"
+                        formControlName="description"
                         placeholder="Enter Duration Time"
                         required
                       />
                     </div>
                     <div class="form-group col-md-2">
-                      <label for="position">Position</label>
+                      <label for="position">videoUrl</label>
                       <input
                         type="text"
                         class="form-control"
-                        formControlName="position"
+                        formControlName="videoUrl"
                         placeholder="Enter Position"
                         required
                         readonly
@@ -305,20 +308,18 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                      <label for="courseType">File Status</label>
-                      <select
+                      <label for="courseType">pdfurl</label>
+                      <input
+                        type="text"
                         class="form-control"
-                        id="courseType"
-                        formControlName="courseType"
+                        formControlName="pdfUrl"
+                        placeholder="Enter Course Type"
                         required
-                      >
-                        <option value="free">Visible</option>
-                        <option value="paid">Invisible</option>
-                      </select>
+                        readonly
+                      />
                     </div>
                   </div>
-                  
-                  
+
                   <button
                     type="button"
                     class="btn btn-secondary mr-3"
@@ -355,21 +356,4 @@
     </mat-accordion>
     <!-- End Sections -->
   </form>
-  }@placeholder {
-  <div class="slider-placeholder">
-    <p-skeleton width="100%" height="200px" />
-  </div>
-  } @error {
-  <p style="width: fit-content; margin: auto">
-    An error occurred while loading the courses. Please try again later.
-  </p>
-  } } @else if (!courseLoaded && !courseError) {
-  <div class="slider-placeholder">
-    <p-skeleton width="100%" height="200px" />
-  </div>
-  } @else if (courseError) {
-  <div class="empty-container">
-    <p>Error In Server</p>
-  </div>
-  }
 </div>

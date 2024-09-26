@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CourseService } from '../../shared/services/course.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @Component({
   selector: 'app-course-admin',
@@ -32,7 +33,12 @@ export class CourseAdminComponent implements OnInit, OnDestroy {
   }
 
   addCourse() {
-    this.router.navigate(['add-course'], { relativeTo: this.activatedRoute });
+    this.router.navigate(['admin/add-course'], {
+      relativeTo: this.activatedRoute,
+    });
+  }
+  openAddCourseModal() {
+    this.activpop.open(AddCourseComponent);
   }
 
   loadData() {
@@ -41,7 +47,7 @@ export class CourseAdminComponent implements OnInit, OnDestroy {
     this.courseService.getAllCourses().subscribe({
       next: (data) => {
         this.coursesLoaded = true;
-        this.Courses = data.data;
+        this.Courses = data;
       },
       error: (error) => {
         this.coursesError = true;

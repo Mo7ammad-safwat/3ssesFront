@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { Courses } from '../../shared/interface/course';
+import { CourseService } from '../../shared/services/course.service';
 
 @Component({
   selector: 'app-my-learn',
@@ -15,70 +16,17 @@ import { Courses } from '../../shared/interface/course';
   styleUrl: './my-learn.component.scss',
 })
 export class MyLearnComponent {
-  products: Courses[] = [
-    {
-      id: 'c1',
-      title: 'Physics',
-      description:
-        'A comprehensive overview of mechanical engineering principles.',
-      Categoryid: 1,
-      instractorNaem: 'Gostaf Adel',
-      images: './../../../assets/img/download.png',
-
-      Userid: 101,
-      sections: [],
-      aboutMe: [],
-    },
-    {
-      id: 'c2',
-      title: 'Chemistry',
-      description:
-        'Understanding the core components and processes in feed mill production.',
-      Categoryid: 2,
-      instractorNaem: 'Ashraf Kamel',
-      images:
-        './../../../assets/img/WhatsApp Image 2024-09-16 at 11.19.12_889f6bc7.jpg',
-
-      Userid: 102,
-      sections: [],
-      aboutMe: [],
-    },
-    {
-      id: 'c3',
-      title: 'Arabic',
-      description: 'Study of energy, heat, and their transformations.',
-      Categoryid: 3,
-      instractorNaem: 'Ahmed mohamed',
-      images: './../../../assets/img/download.png',
-
-      Userid: 103,
-      sections: [],
-      aboutMe: [],
-    },
-    {
-      id: 'c4',
-      title: 'English',
-      description: 'Study of energy, heat, and their transformations.',
-      Categoryid: 3,
-      instractorNaem: 'John Doe',
-      images:
-        './../../../assets/img/WhatsApp Image 2024-09-16 at 11.19.12_889f6bc7.jpg',
-
-      Userid: 103,
-      sections: [],
-      aboutMe: [],
-    },
-  ];
+  products: Courses[] = [];
 
   responsiveOptions: any[] | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private courseService: CourseService) {}
 
   ngOnInit() {
     // this.productService.getProductsSmall().then((products) => {
     //   this.products = products;
     // });
-
+  this.loadData();
     this.responsiveOptions = [
       {
         breakpoint: '1400px',
@@ -97,6 +45,17 @@ export class MyLearnComponent {
       },
     ];
   }
+  loadData() {
+    this.courseService.getAllCourses().subscribe({
+      next: (data) => {
+        this.products = data;
+      },
+      error: (error) => {
+        console.error('Error fetching data:', error);
+      },
+    });
+  }
+
   viewCard(course: any) {
     this.router.navigate([`home/MyCourses/${course.id}`]);
   }

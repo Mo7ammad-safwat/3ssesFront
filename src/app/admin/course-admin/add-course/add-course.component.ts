@@ -19,6 +19,7 @@ import { CategoryService } from '../../../shared/services/category.service';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-add-course',
   standalone: true,
@@ -49,7 +50,6 @@ export class AddCourseComponent implements OnInit {
   expandedLessonIndexes: { [sectionIndex: number]: number | null } = {};
   currentLessonId: number | null = null;
 
-  imagePreview: string | ArrayBuffer | null = null;
   isDragging = false;
   selectedFile: File | null = null;
   oldImageName: string = '';
@@ -62,17 +62,16 @@ export class AddCourseComponent implements OnInit {
     private courseService: CourseService,
     private categoryService: CategoryService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+        public activeModal: NgbActiveModal
+
   ) {
     this.courseForm = this.fb.group({
       id: [0],
-      photo: [null],
-      titleEnglish: ['', Validators.required],
-      descriptionArabic: ['', Validators.required],
-      descriptionEnglish: ['', Validators.required],
-      language: ['', Validators.required],
-      price: [0, [Validators.required, Validators.min(0)]],
-      fixedPrice: [0, [Validators.required, Validators.min(0)]],
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      // price: [0, [Validators.required, Validators.min(0)]],
+      imageUrl: ['', Validators.required],
       categoryId: ['', Validators.required],
       sections: this.fb.array([]),
     });
@@ -127,9 +126,8 @@ export class AddCourseComponent implements OnInit {
     const sectionGroup = this.fb.group({
       id: [0],
       courseId: [0],
-      arabicTitle: ['', Validators.required],
-      englishTitle: ['', Validators.required],
-      position: [1, [Validators.required, Validators.min(1)]],
+      title: ['', Validators.required],
+      pozshin: [1, [Validators.required, Validators.min(1)]],
       lessons: this.fb.array([]),
     });
     this.sections.push(sectionGroup);
@@ -143,12 +141,11 @@ export class AddCourseComponent implements OnInit {
     const lessonGroup = this.fb.group({
       id: [0],
       sectionId: [0],
-      titleArabic: ['', Validators.required],
-      titleEnglish: ['', Validators.required],
-      duration: [0, Validators.required],
-      position: [1, [Validators.required]],
-      courseType: ['paid', Validators.required],
-      contentURL: [''],
+      title: ['', Validators.required],
+      pozshin: [1, [Validators.required]],
+      description: ['', Validators.required],
+      videoUrl: ['', Validators.required],
+      pdfUrl: ['', Validators.required],
     });
     this.getLessons(sectionIndex).push(lessonGroup);
     this.updateLessonPositions(sectionIndex);
@@ -160,7 +157,28 @@ export class AddCourseComponent implements OnInit {
     return this.sections.at(sectionIndex).get('lessons') as FormArray;
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const formData = this.courseForm.value
+    const data = {
+      title: formData.title,
+      description: formData.description,
+      Categoryid: formData.categoryId,
+      Userid: 1,
+      images: formData.imageUrl,
+    };
+
+    this.courseService.addCourse(data).subscribe({
+      next: (data) => {
+        this.courseForm.reset();
+        this.activeModal.close('Close click');
+        Swal.fire('Saved!', 'The category has been saved.', 'success');
+      },
+      error: (error) => {
+        console.error('Error posting data:', error);
+        Swal.fire('Error!', 'There was an error saving the category.', 'error');
+      },
+    });
+  }
 
   updateSectionPositions() {
     this.sections.controls.forEach((sectionControl, index) => {

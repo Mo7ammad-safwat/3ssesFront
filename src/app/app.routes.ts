@@ -48,7 +48,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: CategoryAdminComponent },
       { path: 'course', component: CourseAdminComponent },
-      { path: 'courses/add-course', component: AddCourseComponent },
+      { path: 'add-course', component: AddCourseComponent },
     ],
   }, // حماية صفحة الادمن
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // إعادة التوجيه إلى تسجيل الدخول بشكل افتراضي

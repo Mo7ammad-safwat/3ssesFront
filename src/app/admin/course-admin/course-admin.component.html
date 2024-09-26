@@ -4,7 +4,7 @@
     <!-- <input type="text" placeholder="Search..." /> -->
   </div>
   <div class="add" data-toggle="modal">
-    <button class="btn all-btn " (click)="addCourse()">+</button>
+    <button class="btn all-btn " (click)="openAddCourseModal()">+</button>
   </div>
 </div>
 
@@ -30,11 +30,11 @@
         <div class="column column-4" data-label="Description">{{ item.description }}</div>
 
         <div class="column column-3" data-label="Price">{{ item.price }}</div>
-       
-         
 
 
-        
+
+
+
       </li>
       }
     </ul>
