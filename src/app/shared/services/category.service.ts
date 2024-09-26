@@ -1,64 +1,45 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+// src/app/services/category.service.ts
+
 import { Injectable } from '@angular/core';
-import { Subject, Observable, tap } from 'rxjs';
-import { Constants } from '../constants';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment'; // تأكد من المسار الصحيح
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  private categoriesUpdated = new Subject<void>();
+  private baseUrl = `${environment.baseURL}/categories`; // URL الأساسي للـ categories
 
   constructor(private http: HttpClient) {}
 
-  getallData(): Observable<Category[]> {
-    console.log(Constants.CATEGORY_ALL_API);
-    return this.http.get<Category[]>(Constants.CATEGORY_ALL_API);
-  }
-  postData(data: Category): Observable<Category> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http
-      .post<Category>(Constants.CATEGORY_ADD_API, data, { headers })
-      .pipe(
-        tap(() => {
-          this.categoriesUpdated.next();
-        })
-      );
+  // الحصول على جميع الفئات
+  getAllCategories(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
   }
 
-  deleteData(id: Category): Observable<Category> {
-    return this.http.delete<any>(Constants.CATEGORY_DELETE_API + id).pipe(
-      tap(() => {
-        this.categoriesUpdated.next();
-      })
-    );
+  // الحصول على فئة بناءً على المعرف
+  getCategoryById(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  updateData(data: Category): Observable<Category> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http
-      .put<Category>(Constants.CATEGORY_UPDATE_API + data.id, data, { headers })
-      .pipe(
-        tap(() => {
-          this.categoriesUpdated.next();
-        })
-      );
+  // الحصول على الفئات بناءً على معرف الدورة
+  getCategoriesByCourseId(courseId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/course/${courseId}`);
   }
 
-  getCategoryById(categoryId: number): Observable<Category> {
-    return this.http.get<Category>(`${Constants.CATEGORY_API}/${categoryId}`);
+  // إنشاء فئة جديدة
+  createCategory(categoryData: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, categoryData);
   }
 
-  getCategoriesUpdateListener(): Observable<void> {
-    return this.categoriesUpdated.asObservable();
+  // تحديث فئة موجودة
+  updateCategory(id: number, categoryData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, categoryData);
   }
 
-  uploadImages(files: File[]): Observable<string> {
-    const formData: FormData = new FormData();
-    for (let file of files) {
-      formData.append('file', file, file.name);
-    }
-    return this.http.post<string>(Constants.CATEGORY_UPLOAD_IMAGE, formData);
+  // حذف فئة
+  deleteCategory(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

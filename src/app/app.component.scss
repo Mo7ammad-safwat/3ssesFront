@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+.hide-sidebar {
+  display: none;
+  /* إخفاء الشريط الجانبي */
+}
 
 .container {
   display: flex;

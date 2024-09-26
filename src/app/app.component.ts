@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './core/sidebar/sidebar.component'; // Import SidebarComponent
@@ -14,9 +14,16 @@ import { SidebarComponent } from './core/sidebar/sidebar.component'; // Import S
 export class AppComponent {
   title = '3ssesFront';
   isSidebarHovered: boolean = false;
+ currentRoute: string = '';
 
-  constructor(private router: Router) {}
-
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url; // تحديث المسار الحالي
+      }
+    });
+  
+  }
   onSidebarHover() {
     this.isSidebarHovered = true;
   }

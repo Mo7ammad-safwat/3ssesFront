@@ -1,13 +1,13 @@
    <div class="form">
-         <form action="" method=""> <!--BackEnd -->
+         <form (submit)="signUp()"> <!--BackEnd -->
             <h2>Register here</h2>
-            <input type="text" name="Name" id="Name" placeholder="Enter Full Name Here"/>
-            <input type="email" name="email" id="email" placeholder="Enter email Here"/>
-            <input type="password" name="Password" id="Password" placeholder="Enter Password Here"/>
+            <input type="text" id="name" [(ngModel)]="name" name="name" required placeholder="Enter Full Name Here"/>
+            <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Enter email Here"/>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Enter Password Here"/>
             <!-- Put the Role Here -->
             <button type="submit" class="btnn">Register</button>
         </form>
 
         <p class="link">Have an account<br><br><br>
-        <a href="login">Sign in</a> here</p>
+        <!-- <a href="login">Sign in</a> here</p> -->
     </div>

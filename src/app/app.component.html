@@ -1,7 +1,7 @@
 
 <section>
   <div class="container-fluid">
-    <div class="col-1 col-md-2">
+    <div class="col-1 col-md-2" [class.hide-sidebar]="currentRoute === '/login' || currentRoute === '/signup'">
       <app-sidebar
         (mouseenter)="onSidebarHover()"
         (mouseleave)="onSidebarLeave()"

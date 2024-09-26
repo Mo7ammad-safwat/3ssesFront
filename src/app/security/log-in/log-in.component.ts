@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { ViewEncapsulation } from '@angular/core';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-log-in',
@@ -10,19 +11,32 @@ import { ViewEncapsulation } from '@angular/core';
   imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class LogInComponent {
   email: string = '';
   password: string = '';
 
-  // constructor(private authService: MockAuthService, private router: Router) {} // Inject MockAuthService and Router
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
-  onLogin() {
-  //   if (this.authService.login(this.email, this.password)) {
-  //     this.router.navigate(['/home']); // Navigate to home on successful login
-  //   } else {
-  //     alert('Invalid credentials'); // Show an alert on failed login
-  //   }
+  signIn() {
+    const credentials = {
+      email: this.email,
+      password: this.password,
+    };
+
+    this.authService.signIn(credentials).subscribe(
+      (response) => {
+        this.authService.setToken(response.token);
+        console.log('Login successful:', response);
+        this.router.navigate(['/home']); // إعادة التوجيه بعد تسجيل الدخول
+      },
+      (error) => {
+        console.error('Login error:', error);
+      }
+    );
   }
 }
