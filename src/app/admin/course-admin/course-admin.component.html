@@ -1,0 +1,49 @@
+<h2 class="main-section-title mt-2" style="font-family:var(--font-stack-heading-serif) ; font-size: 24px; font-weight: 600;">Courses</h2>
+<div class="main-section-header " style="font-family: var(--font-stack-heading-serif) ; font-size: 20px;">
+  <div class="search mb-2">
+    <!-- <input type="text" placeholder="Search..." /> -->
+  </div>
+  <div class="add" data-toggle="modal">
+    <button class="btn all-btn " (click)="openAddCourseModal()">+</button>
+  </div>
+</div>
+
+
+
+
+    <ul class="responsive-table">
+      <li class="table-header "  style="font-family:  var(   --font-stack-heading) ; font-size: 20px;">
+        <div class="column column-1">Code</div>
+        <div class="column column-2">Name</div>
+
+        <div class="column column-4">Description</div>
+
+        <div class="column column-3">Price</div>
+      </li>
+
+
+      @for (item of Courses; track $index) {
+      <li class="table-row"   style="font-family:  var(   --font-stack-heading) ; font-size: 16px; color: black;">
+        <div class="column column-1" data-label="Code">{{  $index + 1 }}</div>
+        <div class="column column-2" data-label="Name">{{ item.title }}</div>
+
+        <div class="column column-4" data-label="Description">{{ item.description }}</div>
+
+        <div class="column column-3" data-label="Price">{{ item.price }}</div>
+
+
+
+
+
+      </li>
+      }
+    </ul>
+
+
+
+
+
+
+
+
+

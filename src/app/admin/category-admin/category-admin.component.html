@@ -1,0 +1,18 @@
+<div>
+
+  <h2 class="main-section-title">Category</h2>
+  <div>
+    <div class="main-section-header">
+      <!-- Search Content -->
+      <div class="search mb-2" style="border: 1px solid var(--main-color);">
+        <!-- <input type="text" placeholder="Search" /> -->
+      </div>
+      <div class="add-btn" data-toggle="modal" data-target="#categoryModal">
+        <button class="btn all-btn" style="color: white; background-color: var(--main-color);" (click)="openAddCourseModal()">+</button>
+      </div>
+    </div>
+    <!-- Deferred loading of the category table -->
+      <app-category-table></app-category-table>
+
+  </div>
+</div>

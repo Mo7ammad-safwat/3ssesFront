@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%; /* Make the container take the full width */
+  max-width: 100%; /* Override any max-width set by Bootstrap */
+  padding: 0; /* Remove default padding */
+}
+
+.row {
+  width: 100%; /* Ensure the row takes the full width */
+  margin: 0; /* Remove any default margins */
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.badge {
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.card-header ul.nav-pills .nav-link {
+  color: black; /* Initial color */
+}
+
+.card-header ul.nav-pills .nav-link:hover {
+  color: white; /* Color on hover */
+}
+
+.card-container {
+  display: flex;
+  gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container takes the full height */
+}

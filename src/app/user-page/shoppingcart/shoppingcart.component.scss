@@ -1,0 +1,100 @@
+/* Container for the DataView */
+.p-dataview {
+  margin: 20px;
+}
+
+/* Styling for each product item */
+.product-item {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure the item takes full width of its container */
+  height: 100%; /* Ensure the card takes full height */
+}
+
+/* Product image */
+.product-image {
+  width: 50px;
+  height: 50px; /* Set a fixed height */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Flex container for content */
+.flex-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push the footer to the bottom */
+  height: 100%;
+}
+
+/* Product name */
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Product category */
+.product-category {
+  font-size: 0.9em;
+  color: #757575;
+  margin-bottom: 8px;
+}
+
+/* Product price */
+.product-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+/* Footer container for price and button */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Push the footer to the bottom of the card */
+  width: 300%;
+}
+
+/* Individual button styling */
+.product-footer .product-button {
+  margin-left: auto; /* Push the button to the far right */
+  padding: 12px 24px; /* Increase padding for better visibility */
+  font-size: 1em; /* Increase font size */
+}
+
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+/* Center the row */
+.row {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%; /* Ensure the row takes full width of its container */
+}
+
+.custom-buy-now-button {
+  background-color: #007bff; /* Change to your desired background color */
+  color: white; /* Change to your desired text color */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Adjust padding */
+  font-size: 10px; /* Adjust font size */
+  border-radius: 5px; /* Adjust border radius */
+}
+
+.custom-buy-now-button:hover {
+  background-color: #0056b3; /* Change to your desired hover background color */
+}
+
+

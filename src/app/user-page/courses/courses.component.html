@@ -1,0 +1,34 @@
+<br><br><br><div class="home-card">
+
+        @for (item of courses; track $index) {
+        <div class="card">
+            <div class="card-header" style="background-color: transparent; direction: ltr;">
+                <div class="avatar">
+                    <span>m</span>
+                </div>
+                <div class="prof-name">
+                    <span>Prof. mohammd</span>
+                </div>
+            </div>
+            <div class="card-body">
+              <a (click)="viewCard(item)">
+
+                &nbsp;&nbsp;&nbsp;<img  [src]="item.imageDownload" alt="Biology" class="card-image">
+              </a>
+
+                <div class="" style="padding: 10px;">
+
+                    <h2> {{ language === "ar" ? item.titleAr : item.title }}</h2>
+
+                    <div class="buttons">
+                        <button class="enroll-btn"  (click)="enroll(item); $event.stopPropagation()">{{"Enroll_Now"}}</button>
+                        <button class="details-btn" (click)="viewCard(item); $event.stopPropagation()">{{"View_Details"}} </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+      }
+
+
+    </div>

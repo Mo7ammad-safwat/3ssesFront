@@ -1,0 +1,50 @@
+
+<div class="container p-4 ">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <h1 class="text-center text-head mb-4">{{categoryToEdit? "Updete Category" : "Add Category"}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <!-- Form -->
+      <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+
+
+
+
+
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title">Name </label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="title"
+            id="Name"
+            placeholder="Enter Name In English"
+          />
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="descriptionAr">Description </label>
+          <textarea
+            class="form-control"
+            id="description"
+            rows="3"
+            formControlName="description"
+            placeholder="Enter Description In English"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-success">{{ categoryToEdit ? 'Update' : 'Save' }}</button>
+          <button type="button" style="margin-left: 5px;" (click)="onclose()" class="btn btn-danger">
+            close
+          </button>
+      </form>
+    </div>
+  </div>
+</div>

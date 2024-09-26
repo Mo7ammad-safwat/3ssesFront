@@ -1,0 +1,54 @@
+<div class="sidebar">
+  <ul class="nav flex-column">
+    <li style="cursor: pointer;" class="nav-item">
+      <a (click)="openHome()" class="nav-link">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a>
+    </li>
+      <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="openCategory()" class="nav-link">
+        <i class="fas fa-user-graduate"></i> <span>Categories</span>
+      </a>
+    </li> -->
+
+    <!-- <li style="cursor: pointer;" class="nav-item">
+      <a (click)="openEnrollment()" class="nav-link">
+        <i class="fa-solid fa-bars-staggered"></i> <span>Enrollments</span>
+      </a>
+    </li> -->
+    <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="openSlider()" class="nav-link">
+        <i class="fas fa-chalkboard-teacher"></i> <span>Slider</span>
+      </a>
+    </li> -->
+    <!-- <li style="cursor: pointer;" *ngIf="isAdmin()" class="nav-item">
+      <a (click)="onTeacherRequest()" class="nav-link">
+        <i class="fa-solid fa-person-chalkboard"></i> <span>Teacher Request</span>
+      </a>
+    </li> -->
+    <!-- <li *ngIf="isAdmin()" class="nav-item">
+      <a (click)="onAboutUs()" class="nav-link">
+        <i class="fas fa-chalkboard-teacher"></i> <span>About Us</span>
+      </a>
+    </li> -->
+
+    <li style="cursor: pointer;" class="nav-item">
+      <a routerLink="home/courses" class="nav-link">
+        <i class="fas fa-book"></i> <span>Courses</span>
+      </a>
+    </li>
+
+    <li style="cursor: pointer;" class="nav-item">
+      <a routerLink="home/shoppingcart" class="nav-link">
+        <i class="fa-solid fa-cart-shopping"></i> <span>ShoppingCart</span>
+      </a>
+    </li>
+
+    <!-- Sign Out option -->
+    <li style="cursor: pointer; margin-top: auto;" class="nav-item">
+      <a (click)="signOut()" class="nav-link">
+        <i class="fas fa-sign-out-alt"></i> <span>Sign Out</span>
+      </a>
+    </li>
+  </ul>
+</div>

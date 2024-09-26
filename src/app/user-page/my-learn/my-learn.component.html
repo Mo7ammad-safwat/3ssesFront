@@ -1,0 +1,32 @@
+<div class="container">
+<div class="border-top">
+  <div class="row">
+    @for (item of products; track $index) {
+    <div class="col-lg-3 col-md-6 mb-4">
+      <a (click)="viewCard(item); $event.stopPropagation()">
+        <div class="card">
+          <div
+            class="card-header"
+            style="background-color: transparent; direction: ltr"
+          >
+            <div class="avatar">
+              <span>{{ item.instractorNaem.charAt(0) }}</span>
+            </div>
+            <div class="prof-name">
+              <span>Prof. {{ item.instractorNaem }}</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <img [src]="item.images" class="card-image"/>
+            <div class="" style="padding: 10px">
+              <h2>{{ item.title }}</h2>
+              <h3>{{ item.instractorNaem }}</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    }
+  </div>
+</div>
+</div>

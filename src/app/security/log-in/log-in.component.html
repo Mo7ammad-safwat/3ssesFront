@@ -1,0 +1,10 @@
+<div class="form">
+  <form (submit)="signIn()"> <!-- Call onLogin on form submit -->
+    <h2>Login here</h2>
+    <input type="email" name="email" id="email" placeholder="Enter email Here" [(ngModel)]="email"/>
+    <input type="password" name="Password" id="Password" placeholder="Enter Password Here" [(ngModel)]="password"/>
+    <button type="submit" class="btnn">Login</button>
+  </form>
+  <p class="link">Don't have an account<br><br><br>
+    <a routerLink="/signup">Sign up</a> here</p> <!-- Use routerLink for navigation -->
+</div>

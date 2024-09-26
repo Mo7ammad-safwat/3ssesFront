@@ -1,0 +1,67 @@
+<br><br>
+<div class="container">
+  <div class="row">
+    <!-- Upcoming Events Section -->
+    <div class="col-md">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>Calendar</h5>
+        </div>
+        <div class="card-body">
+          <div class="calendar">
+            <p-calendar
+              class="max-w-full"
+              [(ngModel)]="selectedDate"
+              [inline]="true"
+              [showWeek]="true">
+            </p-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports Section -->
+    <div class="col-md">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>Upcoming Courses & Exams</h5>
+        </div>
+        <div class="card-body">
+          <h5>Courses:</h5>
+          <p class="course-item">
+            Physics By Prof. Gostaf Adel <span class="date">Sep26</span>
+          </p>
+          <p class="course-item">
+            Chemistry By Prof. Ashraf Kamel <span class="date">Sep26</span>
+          </p>
+          <p class="course-item">
+            Arabic By Prof. Ahmed mohamed<span class="date">Sep26</span>
+          </p>
+
+          <h5>Exams:</h5>
+          <p class="course-item">
+            Exam on English Course&nbsp;<b>Ch(1)</b><span class="date">Sep26</span>
+          </p>
+          <p class="course-item">
+            Exam on Arabic Course&nbsp;&nbsp;<b>Ch(1)</b> <span class="date">Sep26</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Current Projects Section -->
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>My Courses</h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <app-my-learn></app-my-learn>

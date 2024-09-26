@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ffffff; /* Light grey background */
+  padding: 1rem; /* Add padding to prevent content from touching the edges */
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Set a maximum width */
+  text-align: center;
+  margin: 0 auto; /* Center the container */
+}
+
+h2 {
+  color: #000000; /* Black color for the text */
+  margin-bottom: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+input::placeholder {
+  color: #999999;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9534f; /* Red button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c9302c;
+}
+
+.link {
+  margin-top: 1rem;
+}
+
+.link a {
+  color: #d9534f; /* Red for the link */
+  text-decoration: none;
+}
